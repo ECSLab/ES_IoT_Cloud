@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wust.iot.dao.DeviceMapper">
+  <resultMap id="BaseResultMap" type="com.wust.iot.model.Device">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="project_id" jdbcType="INTEGER" property="projectId" />
+    <result column="protocol_id" jdbcType="INTEGER" property="protocolId" />
+    <result column="data_type" jdbcType="INTEGER" property="dataType" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="privacy" jdbcType="INTEGER" property="privacy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, project_id, protocol_id, data_type, name, number, privacy, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_device_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_device_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wust.iot.model.Device" useGeneratedKeys="true" keyProperty="id">
+    insert into t_device_info (id, project_id, protocol_id, 
+      data_type, name, number, 
+      privacy, create_time)
+    values (#{id,jdbcType=INTEGER}, #{projectId,jdbcType=INTEGER}, #{protocolId,jdbcType=INTEGER}, 
+      #{dataType,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{privacy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wust.iot.model.Device">
+    insert into t_device_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectId != null">
+        project_id,
+      </if>
+      <if test="protocolId != null">
+        protocol_id,
+      </if>
+      <if test="dataType != null">
+        data_type,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="privacy != null">
+        privacy,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="protocolId != null">
+        #{protocolId,jdbcType=INTEGER},
+      </if>
+      <if test="dataType != null">
+        #{dataType,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="privacy != null">
+        #{privacy,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wust.iot.model.Device">
+    update t_device_info
+    <set>
+      <if test="projectId != null">
+        project_id = #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="protocolId != null">
+        protocol_id = #{protocolId,jdbcType=INTEGER},
+      </if>
+      <if test="dataType != null">
+        data_type = #{dataType,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="privacy != null">
+        privacy = #{privacy,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wust.iot.model.Device">
+    update t_device_info
+    set project_id = #{projectId,jdbcType=INTEGER},
+      protocol_id = #{protocolId,jdbcType=INTEGER},
+      data_type = #{dataType,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      number = #{number,jdbcType=VARCHAR},
+      privacy = #{privacy,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectDeviceListByProjectId" resultType="Device">
+    select * from IoT_platform.t_device_info
+    WHERE project_id = #{projectId,jdbcType=INTEGER};
+  </select>
+
+  <select id="selectOneDeviceByApiKeyAndDeviceId" resultType="Device">
+    SELECT * FROM IoT_platform.t_device_info d
+    JOIN IoT_platform.t_project_info p
+    ON d.project_id = p.id
+    WHERE d.id = #{1} AND p.api_key = #{0};
+  </select>
+
+  <delete id="deleteByProjectId" parameterType="java.lang.Integer">
+    DELETE FROM IoT_platform.t_device_info
+    WHERE project_id = #{0}
+  </delete>
+
+  <select id="selectDeviceList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    FROM IoT_platform.t_device_info;
+  </select>
+</mapper>

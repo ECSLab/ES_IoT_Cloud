@@ -1,0 +1,4 @@
+Hostsip = "localhost:3306"
+Username = "user"
+Password = "pass"
+DBname = "IoT_platform"

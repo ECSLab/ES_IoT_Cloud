@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>物联网终端测试</title>
+</head>
+<body>
+<script type="text/javascript">
+    var sock = null;
+    var wsuri = "ws://127.0.0.1:9000";
+
+    window.onload = function() {
+
+        console.log("onload");
+
+        sock = new WebSocket(wsuri);
+
+        sock.onopen = function() {
+            console.log("connected to " + wsuri);
+        }
+
+        sock.onclose = function(e) {
+            console.log("connection closed (" + e.code + ")");
+        }
+
+        sock.onmessage = function(e) {
+            console.log("message received: " + e.data);
+                    window.alert(e.data);
+        }
+    };
+
+    function send() {
+        var msg = document.getElementById('message').value;
+        sock.send(msg);
+    };
+</script>
+<h1>物联网终端测试</h1>
+<form>
+    <p>
+        Message: <input id="message" type="text" value='{"api_key": "sdakasyri", "device_id": "1", "data": "{\"pm2.5\": 17.60,\"pm10\": 31.90}", "time":"2017-12-25 16:54:08"}'>
+    </p>
+</form>
+<button onclick="send();">Send Message</button>
+</body>
+</html>

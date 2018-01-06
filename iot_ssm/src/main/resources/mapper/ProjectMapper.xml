@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wust.iot.dao.ProjectMapper">
+  <resultMap id="BaseResultMap" type="com.wust.iot.model.Project">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="industry_id" jdbcType="INTEGER" property="industryId" />
+    <result column="profile" jdbcType="VARCHAR" property="profile" />
+    <result column="api_key" jdbcType="VARCHAR" property="apiKey" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="device_count" jdbcType="INTEGER" property="deviceCount"/>
+    <result column="industry_name" jdbcType="VARCHAR" property="industryName"/>
+
+    <collection property="deviceList" ofType="Device">
+      <id column="d_id" jdbcType="INTEGER" property="id" javaType="INTEGER"/>
+      <result column="d_name" jdbcType="VARCHAR" property="name" javaType="java.lang.String"/>
+      <result column="d_create_time" jdbcType="VARCHAR" property="createTime" javaType="java.util.Date"/>
+    </collection>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, industry_id, profile, api_key, create_time, user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_project_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_project_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wust.iot.model.Project" useGeneratedKeys="true" keyProperty="id">
+    insert into t_project_info (id, name, industry_id, 
+      profile, api_key, create_time, 
+      user_id)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{industryId,jdbcType=INTEGER}, 
+      #{profile,jdbcType=VARCHAR}, #{apiKey,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wust.iot.model.Project">
+    insert into t_project_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="industryId != null">
+        industry_id,
+      </if>
+      <if test="profile != null">
+        profile,
+      </if>
+      <if test="apiKey != null">
+        api_key,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="industryId != null">
+        #{industryId,jdbcType=INTEGER},
+      </if>
+      <if test="profile != null">
+        #{profile,jdbcType=VARCHAR},
+      </if>
+      <if test="apiKey != null">
+        #{apiKey,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wust.iot.model.Project">
+    update t_project_info
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="industryId != null">
+        industry_id = #{industryId,jdbcType=INTEGER},
+      </if>
+      <if test="profile != null">
+        profile = #{profile,jdbcType=VARCHAR},
+      </if>
+      <if test="apiKey != null">
+        api_key = #{apiKey,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wust.iot.model.Project">
+    update t_project_info
+    set name = #{name,jdbcType=VARCHAR},
+      industry_id = #{industryId,jdbcType=INTEGER},
+      profile = #{profile,jdbcType=VARCHAR},
+      api_key = #{apiKey,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectProjectList" resultType="Project">
+    /*SELECT p.*, d.id as d_id, d.name as d_name,d.create_time as d_create_time,i.name as industry_name
+    FROM IoT_platform.t_project_info p
+    LEFT JOIN  IoT_platform.t_device_info d
+    ON p.id = d.project_id
+    LEFT JOIN IoT_platform.t_project_industry i
+    ON p.industry_id = i.id
+    WHERE p.id = 1;*/
+    SELECT p.*
+    FROM IoT_platform.t_project_info p
+  </select>
+
+  <select id="selectProjectListByUserId" resultType="Project">
+    SELECT p.*,COUNT(*) AS device_count,i.name as industry_name
+    FROM IoT_platform.t_project_info p, IoT_platform.t_device_info d,IoT_platform.t_project_industry i
+    WHERE p.id = d.project_id and p.user_id = #{userId} and p.industry_id = i.id
+    group by p.id;
+  </select>
+
+  <select id="selectJoinIndustry" resultType="Project">
+    SELECT p.*,i.name as industry_name,COUNT(*) as device_count
+    FROM IoT_platform.t_project_info p,IoT_platform.t_project_industry i,IoT_platform.t_device_info d
+    WHERE p.id = #{0} and p.industry_id = i.id and p.id = d.project_id
+    group by p.id;
+  </select>
+
+  <select id="selectJoinDeviceAndIndustry" resultMap="BaseResultMap">
+    SELECT p.*,d.id as d_id,d.name as d_name,d.create_time as d_create_time
+    FROM IoT_platform.t_project_info p , IoT_platform.t_device_info d
+    WHERE p.id = d.project_id AND p.id = #{0};
+  </select>
+</mapper>

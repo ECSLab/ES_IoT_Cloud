@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wust.iot.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.wust.iot.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="bind_phone" jdbcType="VARCHAR" property="bindPhone" />
+    <result column="bind_email" jdbcType="VARCHAR" property="bindEmail" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="work_place" jdbcType="VARCHAR" property="workPlace" />
+    <result column="personal_profile" jdbcType="VARCHAR" property="personalProfile" />
+    <result column="head_image" jdbcType="VARCHAR" property="headImage" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, bind_phone, bind_email, real_name, birthday, location, work_place, 
+    personal_profile, head_image, phone, qq
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wust.iot.model.User">
+    insert into t_user_info (id, username, password, 
+      bind_phone, bind_email, real_name, 
+      birthday, location, work_place, 
+      personal_profile, head_image, phone, 
+      qq)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{bindPhone,jdbcType=VARCHAR}, #{bindEmail,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=DATE}, #{location,jdbcType=VARCHAR}, #{workPlace,jdbcType=VARCHAR}, 
+      #{personalProfile,jdbcType=VARCHAR}, #{headImage,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{qq,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wust.iot.model.User">
+    insert into t_user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="bindPhone != null">
+        bind_phone,
+      </if>
+      <if test="bindEmail != null">
+        bind_email,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="workPlace != null">
+        work_place,
+      </if>
+      <if test="personalProfile != null">
+        personal_profile,
+      </if>
+      <if test="headImage != null">
+        head_image,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="bindPhone != null">
+        #{bindPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bindEmail != null">
+        #{bindEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="workPlace != null">
+        #{workPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="personalProfile != null">
+        #{personalProfile,jdbcType=VARCHAR},
+      </if>
+      <if test="headImage != null">
+        #{headImage,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wust.iot.model.User">
+    update t_user_info
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="bindPhone != null">
+        bind_phone = #{bindPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bindEmail != null">
+        bind_email = #{bindEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="workPlace != null">
+        work_place = #{workPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="personalProfile != null">
+        personal_profile = #{personalProfile,jdbcType=VARCHAR},
+      </if>
+      <if test="headImage != null">
+        head_image = #{headImage,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wust.iot.model.User">
+    update t_user_info
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      bind_phone = #{bindPhone,jdbcType=VARCHAR},
+      bind_email = #{bindEmail,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      location = #{location,jdbcType=VARCHAR},
+      work_place = #{workPlace,jdbcType=VARCHAR},
+      personal_profile = #{personalProfile,jdbcType=VARCHAR},
+      head_image = #{headImage,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectUserList" resultType="User">
+    SELECT *
+    FROM t_user_info
+  </select>
+
+  <select id="selectUserByUsername" resultType="User">
+    SELECT *
+    FROM IoT_platform.t_user_info
+    WHERE username = #{username};
+  </select>
+
+  <select id="selectUserByMobile" resultType="User">
+    SELECT *
+    FROM IoT_platform.t_user_info
+    WHERE bind_phone = #{mobile};
+  </select>
+</mapper>

@@ -1,0 +1,27 @@
+{
+    "name": "IRGree",
+    "description": "IR for ESP8266 to contral Gree air-conditioner",
+    "keywords": "IR, Gree, ESP",
+    "authors": [
+        {
+            "name": "MyLord Xu",
+            "url": "https://github.com/toMyLord/ESP8266IRGree.git",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/toMyLord/ESP8266IRGree.git"
+    },
+    "version": "1.0.0",
+    "export": {
+        "exclude": [
+            "tests"
+        ]
+    },
+    "frameworks": "arduino",
+    "platforms": "IOT",
+    "examples": [
+        "examples/*/*.ino"
+    ]
+}

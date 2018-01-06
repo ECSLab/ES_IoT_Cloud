@@ -1,0 +1,98 @@
+/*弹出框的出现效果*/
+.showStyle {
+	margin-top: 30px;
+}
+
+
+/*添加设备*/
+
+#zl_delete {
+	position: fixed;
+	left: 50%;
+	top: 0px;
+	margin-left: -200px;
+	margin-top: 20px;
+	width: 400px;
+	background-color: white;
+	display: none;
+	z-index: 101;
+	transition: margin-top 1s linear, background-color 10s linear;
+	border-radius: 4px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .125)!important;
+}
+
+#zl_delete h4 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+#zl_delete header,#zl_delete article,#zl_delete footer {
+	margin: 0 30px;
+}
+
+
+/*Header*/
+
+#zl_delete header {
+	padding: 20px 0px 10px 0px;
+	border-bottom: solid #e5e5e5 1px;
+	flex-direction: row;
+}
+
+/*article*/
+#zl_delete article{
+	padding: 20px 0;
+}
+/*footer*/
+#zl_delete footer{
+	display: flex;
+	justify-content: flex-end;
+	border-top: solid #e5e5e5 1px;
+	padding: 15px 15px 25px 15px;
+}
+
+#zl_delete footer button{
+	font-size: 12px;
+	padding: 9px 15px;
+	border-radius: 3px;
+	transition: all 0.2s linear;
+	cursor: pointer;
+}
+
+
+#deleteButton{
+	background-color: rgb(40, 191, 249);
+	color: white;
+	font-weight: 400;
+	border: 1px rgb(40, 191, 249) outset ;
+	
+	margin-right: 4px;
+	outline: none;
+}
+
+#deleteButton:hover{
+	background-color: #40d8ff;
+}
+
+#deleteButton:active{
+	background-color: #0ba2f1;
+}
+
+
+#closeDelete{
+	background-color: white;
+	color: rgb(125, 129, 139);
+	border: solid rgb(122, 126, 137) 1px;
+	outline: none;
+}
+
+#closeDelete:hover{
+	background-color: #b1b7c7;
+	color: white;
+}
+
+#closeDelete:active{
+	background-color: #7a7e89;
+	color: white;
+	outline: #B1B7C7;
+}

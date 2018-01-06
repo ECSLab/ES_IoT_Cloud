@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../static/css/register.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 视频背景 -->
+    <div class="video-background">
+        <video id="video" autoplay loop volume="0">
+            <source src="../static/imgs/cloud.mp4" type="video/mp4 " codecs="theora, vorbis "></source>
+            你的浏览器暂时不支持Video播放，请更换最新浏览器！
+        </video>
+    </div>
+
+    <div class="main">
+        <header class="choseHeader">
+            <nav>
+                <a class="selected" onclick="change(this)">手机号注册</a>
+                <a onclick="change(this)">邮箱注册</a>
+            </nav>
+        </header>
+        <!-- 登录界面 -->
+        <section class="contentPart">
+            <!-- 账号 -->
+            <p>用户名</p>
+            <div class="form-group username" onclick="addBorderStyle(this)">
+                <input onblur="username(this)" autocomplete="off" type="text" name="username" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="warning">
+                <p id="usernameError">&nbsp;</p>
+            </div>
+
+            <!-- 密码 -->
+            <p>设置密码</p>
+            <div class="form-group passImg" onclick="addBorderStyle(this)">
+                <input onblur="password(this)" autocomplete="off" type="password" name="password" id="password" placeholder="请输入密码">
+            </div>
+            <div class="warning">
+                <p id="passwordError">&nbsp;</p>
+            </div>
+
+            <!-- 确认密码 -->
+            <p>确认密码</p>
+            <div class="form-group rePassImg" onclick="addBorderStyle(this)">
+                <input onblur="repassword()" autocomplete="off" type="password" name="repassword" id="repassword" placeholder="请再次输入密码">
+            </div>
+            <div class="warning">
+                <p id="repasswordError">&nbsp;</p>
+            </div>
+
+            <!-- 手机号 -->
+            <div class="tabTarget">
+                <p>手机号</p>
+                <div class="form-group phone" onclick="addBorderStyle(this)">
+                    <input autocomplete="off" autocomplete="off" onblur="loseBorder(this)" onmouseout="phone()" type="text" name="phone" id="phone" placeholder="请输入手机号">
+                </div>
+                <div class="warning">
+                    <p id="phoneError">&nbsp;</p>
+                </div>
+            </div>
+
+            <!-- 邮箱 -->
+            <div class="tabTarget">
+                <p>邮箱</p>
+                <div class="form-group email" onclick="addBorderStyle(this)">
+                        <input autocomplete="off" onblur="loseBorder(this)" onmouseout="email()" type="email" name="email" id="email" placeholder="请输入邮箱">
+                    <!-- <input autocomplete="off" onblur="loseBorder(this)" onmouseout="email()" type="text" id="email" placeholder="请输入邮箱"> -->
+                </div>
+                <div class="warning">
+                    <p id="emailError">&nbsp;</p>
+                </div>
+            </div>
+
+            <!-- 发送验证码 -->
+            <p>发送验证码</p>
+            <div class="form-group confirm" onclick="addBorderStyle(this)">
+                <input onblur="loseBorder(this)" autocomplete="off" type="text" name="confirm" id="confirm" placeholder="请输入验证码">
+            </div>
+            <div class="containConfirm">
+                <input type="button" id="confirmButton" onclick="sendConfirm(this)" disabled value="发送验证码">
+            </div>
+
+            <!-- 登录 -->
+            <div>
+                <button class="submit" onclick="register()">立即注册</button>
+            </div>
+
+            <div class="form-footer">
+                <a href="/loginIndex">已有账号，去登录</a>
+            </div>
+    </div>
+    </section>
+    </div>
+    <script src="../static/js/jquery-1.11.0.min.js"></script>
+    <script src="../static/js/register.js"></script>
+</body>
+
+</html>

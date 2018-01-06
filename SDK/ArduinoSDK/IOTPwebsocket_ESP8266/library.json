@@ -1,0 +1,27 @@
+{
+    "name": "IOTPWebSockets",
+    "description": "WebSocket Client for Arduino IOTP",
+    "keywords": "wifi, http, web, client, websocket",
+    "authors": [
+        {
+            "name": "MyLord Xu",
+            "url": "https://github.com/toMyLord/IOTPwebSocket.git",
+            "maintainer": true
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/toMyLord/IOTPwebSocket.git"
+    },
+    "version": "1.0.0",
+    "export": {
+        "exclude": [
+            "tests"
+        ]
+    },
+    "frameworks": "arduino",
+    "platforms": "IOTP",
+    "examples": [
+        "examples/*/*.ino"
+    ]
+}

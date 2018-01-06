@@ -1,0 +1,10 @@
+{
+  "User": "root",
+  "Password": "3375",
+  "Ipaddr": "127.0.0.1",
+  "Port": "3306",
+  "DbName": "IoT_platform",
+  "Code": "utf8"
+}
+
+

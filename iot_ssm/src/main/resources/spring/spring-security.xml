@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+		xmlns="http://www.springframework.org/schema/security"
+		xmlns:beans="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<context:annotation-config/>
+
+	<http security="none" pattern="/page/login"/>
+	<http security="none" pattern="/static/**"/>
+	<http security="none" pattern="/api/user/doLogin"/>
+	<http security="none" pattern="/api/user/doRegister"/>
+	<http security="none" pattern="/sdk/**"/>
+	<http auto-config="true" security-context-repository-ref="sessionSecurityContextRepository">
+		<!--需要user or admin身份-->
+		<!--<intercept-url pattern="/api/user/**" access="hasRole('ROLE_USER')"/>-->
+		<!--<intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')"/>-->
+
+
+		<!--TODO-->
+		<form-login login-page="/page/login"
+					login-processing-url="/api/user/doLogin"
+					default-target-url="/"
+					authentication-failure-url="/page/login?error=1"
+					username-parameter="username"
+					password-parameter="password"/>
+		<logout logout-url="/logout" logout-success-url="/page/login?logout=1"/>
+
+		<!--<access-denied-handler error-page="/page/deny"/>-->
+
+		<csrf disabled="true"/>
+		<remember-me user-service-ref="userDetailsService" key="uniqueAndSecret" token-validity-seconds="2592000"/>
+
+		<!--登录前执行token验证-->
+		<custom-filter ref="tokenAuthenticationFilter" before="FORM_LOGIN_FILTER"/>
+	</http>
+
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsService"/>
+	</authentication-manager>
+
+	<beans:bean id="tokenAuthenticationFilter" class="com.wust.iot.filter.TokenAuthenticationFilter">
+		<beans:property name="authenticationManager" ref="authenticationManager"/>
+	</beans:bean>
+	<!--TODO-->
+	<beans:bean id="userService" class="com.wust.iot.service.impl.UserServiceImpl"/>
+	<beans:bean id="userDetailsService" class="com.wust.iot.service.impl.UserDetailsServiceImpl"/>
+	<beans:bean id="sessionSecurityContextRepository" class="org.springframework.security.web.context.HttpSessionSecurityContextRepository"/>
+</beans:beans>

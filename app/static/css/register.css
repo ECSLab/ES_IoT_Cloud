@@ -1,0 +1,245 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    /* 布局 */
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    /* 样式 */
+    margin: 0;
+    background-color: #eaeff2;
+    color: black;
+    overflow-x:hidden;
+}
+
+#video{
+    position: absolute;
+    z-index:-10;
+    top: 50%;
+    left: 50%;
+    margin-left: -960px;
+    margin-top:-540px; 
+    zoom: 1;
+}
+
+.main{
+    /* 布局 */
+    width: 800px;
+    padding: 0px 0px 40px 0px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    /* 样式 */
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    background-color: #fff;
+    
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #aaa;
+}
+
+/* 标题 */
+h1{
+    text-align: center;
+    font-size: 40px;
+    color: #19bbff;
+}
+
+/* 登录部分 */
+/* 包含所有关于登录的样式 */
+/* 包含part1和part2 */
+.contentPart{
+    /* 布局 */
+    position: relative;
+    margin: 40px 260px;
+    /* 样式 */
+}
+
+/* 登录选择样式 头部 */
+.choseHeader{
+    margin: 0px 0px 40px 0px;
+}
+.choseHeader nav{
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: left;
+    height: 40px;
+    /* nav的边框 */
+    background-color: #dbe1e4;
+}
+
+.choseHeader nav a{
+    float: left;
+    width:10%;
+    padding-top: 15px;
+    color: #7a7e89;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-left: 2px;
+}
+.choseHeader nav a:hover{
+    background-color: white;
+    padding-top: 13px;
+}
+
+.selected{
+    background-color: white;
+}
+
+.contentPart p{
+    margin-top: 10px;
+}
+
+
+/* form-group样式 */
+.form-footer{
+	margin-top: 30px;
+}
+.form-footer h3{
+	font-weight: normal;
+	display: inline;
+}
+.form-footer a{
+	float: right;
+	
+	color: #19bbff;
+	position: relative;
+	top: 7px;
+	font-size: 0.8em;
+}
+.form-group{
+    position: relative;
+    padding: 5px;
+    
+    /*样式*/
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/* 模拟输入框被选中时的样式 */
+.input{
+    padding: 6px;
+    
+    /*样式*/
+    border-radius: 5px;
+    border: 1px solid #63b8ff;
+    box-shadow: 0px 0px 4px  #00BFFF;
+}
+/*小图标*/
+.username{
+	background-image: url(../imgs/051.png);
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+    background-position-y: 4px;
+    background-size: 30px;
+}
+.passImg{
+	background-image: url(../imgs/029.png);
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+    background-position-y: 3px;
+    background-size: 30px;
+}
+
+.rePassImg{
+	background-image: url(../imgs/030.png);
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+    background-position-y: 3px;
+    background-size: 30px;
+}
+
+.phone{
+	background-image: url(../imgs/079.png);
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+    background-position-y: 3px;
+    background-size: 30px;
+}
+
+.email{
+	background-image: url(../imgs/063.png);
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+    background-position-y: 3px;
+    background-size: 30px;
+}
+
+.confirm{
+    width: 60%;
+	background-image: url(../imgs/033.png);
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+    background-position-y: 3px;
+    background-size: 30px;
+}
+
+.containConfirm{
+    position: relative;
+}
+
+/* 获取验证码按钮样式 */
+#confirmButton{
+    position: absolute;
+    left: 190px;
+    top: -38px;
+
+    border-radius: 5px;
+    border: none;
+    width: 90px;
+    padding: 10px;
+}
+
+.clock{
+    opacity: 1;
+    background-color: #00c0f1;
+    color: white;
+}
+
+/* 隐藏警告 */
+.warning{
+    visibility: hidden;
+    position: relative;
+    left: 5px;
+    font-size: 0.7rem;
+}
+/* 输入框样式 */
+.form-group input{
+	position: relative;
+	left: 40px;
+	width: 75%;
+    padding: 5px 0px;
+    border: none;
+}
+.form-group input:focus{
+    outline-color: white;
+}
+
+/* 注册或登录按钮的样式 */
+.submit{
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 25px;
+    background-color: #00c0f1;
+    border:none;
+    border-radius: 2px;
+    color: white;
+    font-size: 20px;
+}
+
+/* 功能模块（tab选择） */
+.show{
+    display: block;
+}
+
+/* 提示信息样式 */
+.reminderPass{
+    font-size: 0.8em;
+    color: #00c0f1;
+}
+.reminderError{
+    font-size: 0.8em;
+    color: red;
+}

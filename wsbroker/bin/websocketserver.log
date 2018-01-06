@@ -1,0 +1,70 @@
+[INFO]2017/12/25 18:01:26 Start listening port 9000
+[INFO]2017/12/25 18:02:42 Get Data from file://
+[ERRO]2017/12/25 18:02:42 AUTH ERROReslabtest7
+[ERRO]2017/12/25 18:03:29 SOLVE_JSON_ERROR
+[INFO]2017/12/25 18:04:37 Get Data from file://
+[INFO]2017/12/25 18:04:37 Estanblish :file://
+[INFO]2017/12/25 18:04:37 Now dev num :  1
+[INFO]2017/12/25 18:04:43 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:04:43 Insert a item to DataBase
+[ERRO]2017/12/25 18:04:43 ADD_DATA_ERROR
+[INFO]2017/12/25 18:04:55 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:04:55 Insert a item to DataBase
+[ERRO]2017/12/25 18:04:55 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:40 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:40 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:40 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:41 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:41 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:41 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:42 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:42 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:42 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:43 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:43 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:43 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:43 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:43 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:43 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:44 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:44 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:44 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:44 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:44 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:44 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:45 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:45 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:45 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:45 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:45 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:45 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:50 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:50 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:50 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:51 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:51 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:51 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:51 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:51 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:51 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
+[INFO]2017/12/25 18:05:52 Receive a dataPack from dev file://
+[INFO]2017/12/25 18:05:52 Insert a item to DataBase
+[ERRO]2017/12/25 18:05:52 ADD_DATA_ERROR
