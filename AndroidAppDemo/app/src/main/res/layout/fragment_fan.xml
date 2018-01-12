@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.iotplatformdemo.Fragement.FanFragment">
+
+   <LinearLayout
+       android:layout_gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+   <ImageView
+       android:layout_gravity="center"
+       android:id="@+id/fan_img"
+       android:layout_width="300dp"
+       android:layout_height="300dp" />
+      <ImageButton
+          android:id="@+id/fan_turn"
+          android:layout_width="75dp"
+          android:layout_height="75dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="50dp"
+          android:background="@drawable/bg_circle"
+          android:src="@drawable/ic_off_on" />
+   </LinearLayout>
+
+</FrameLayout>

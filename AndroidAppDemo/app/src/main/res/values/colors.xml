@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="text_color">#2a2a2a</color>
+    <color name="accent_red">#f44336</color>
+    <color name="accent_pink">#e91e63</color>
+    <color name="accent_purple">#9c27b0</color>
+    <color name="accent_deep_purple">#673ab7</color>
+    <color name="accent_indago">#3f51b5</color>
+    <color name="accent_blue">#2196f3</color>
+    <color name="accent_cyan">#59cec9</color>
+    <color name="accent_teal">#009688</color>
+    <color name="accent_green">#4caf50</color>
+    <color name="accent_yellow">#ffeb3b</color>
+    <color name="accent_amber">#ffc107</color>
+    <color name="accent_orange">#ff9800</color>
+    <color name="accent_brown">#795548</color>
+    <color name="accent_white">#FFFFFF</color>
+    <color name="accent_gray">#b5b5b5</color>
+    <color name="accent_black">#000000</color>
+
+    <color name="sub_text_color">#757575</color>
+    <color name="div">#e6e6e6</color>
+    <color name="sub_white">#efeeee</color>
+    <color name="white">#ffffffff</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="border">#649f9f9f</color>
+    <color name="toast_bg">#80000000</color>
+    <color name="toast_bg_loading">#50000000</color>
+    <color name="toast_text">#fefefe</color>
+</resources>

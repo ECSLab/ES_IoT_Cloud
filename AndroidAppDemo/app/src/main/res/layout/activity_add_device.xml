@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.dell.iotplatformdemo.Activity.AddDeviceActivity">
+<include layout="@layout/back_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:divider="@color/accent_gray"
+        android:orientation="vertical"
+        android:showDividers="middle|beginning">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:divider="@color/accent_gray"
+            android:showDividers="beginning|middle">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/airCondition"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/img_device_air_condition"
+                    android:gravity="center|bottom"
+                    android:textAlignment="gravity"
+                    android:paddingBottom="10dp"
+                    android:text="空调" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <TextView
+
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/img_device_projector"
+                    android:gravity="center|bottom"
+                   android:textAlignment="gravity"
+                    android:paddingBottom="10dp"
+                    android:text="投影仪" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:divider="@color/accent_gray"
+            android:showDividers="beginning|middle">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/fengshan"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:drawableTop="@drawable/img_device_fan"
+                    android:gravity="center|bottom"
+                    android:paddingBottom="10dp"
+                    android:text="风扇"
+                    android:textAlignment="center"
+
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/kongqi"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:drawableTop="@drawable/img_device_air_evolution"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="10dp"
+                    android:text="空气检测仪"
+                    android:textAlignment="gravity" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/blub"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:drawableTop="@drawable/img_device_light"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="10dp"
+                    android:text=" 四灯组"
+                    android:textAlignment="gravity" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

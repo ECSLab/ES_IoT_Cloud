@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/item_scene"
+    android:layout_height="75dp">
+<ImageView
+    android:id="@+id/scene_img"
+    android:layout_width="125dp"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/scene_name"
+        android:layout_toRightOf="@id/scene_img"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="客厅"
+        android:layout_alignTop="@id/scene_img"
+        android:textColor="@color/accent_black" />
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/scene_img"
+        android:layout_marginLeft="20dp"
+        android:text="0个遥控器"
+        android:layout_alignBottom="@id/scene_img"/>
+<Button
+    android:id="@+id/edit_scene"
+    android:layout_alignParentRight="true"
+    android:gravity="center"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="25dp"
+    android:layout_width="60dp"
+    android:layout_height="30dp"
+    android:text="编辑"
+    android:textColor="@color/accent_black"
+    android:background="@drawable/shape_button"/>
+</RelativeLayout>

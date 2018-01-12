@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@color/white"
+        app:contentInsetStart="0dp"
+        >
+
+        <ImageView
+            android:id="@+id/tool_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="?attr/actionModeCloseDrawable"
+            android:paddingLeft="@dimen/small_spacing"
+            android:paddingRight="@dimen/sub_medium_spacing" />
+
+        <TextView
+            android:id="@+id/tv_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/accent_black"  />
+           <!--style="@style/whiteTextStyle"-->
+
+        <ImageView
+            android:id="@+id/iv_tool_bar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/main_add"
+            android:layout_marginRight="8dp"
+            android:padding="@dimen/small_spacing" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+</LinearLayout>

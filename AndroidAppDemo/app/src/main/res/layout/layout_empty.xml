@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="200dp">
+<ImageView
+    android:layout_width="@dimen/icon_size"
+    android:layout_height="@dimen/icon_size"
+    android:src="@drawable/ic_empty"/>
+    <TextView
+        android:layout_marginTop="@dimen/small_spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/sub_text_color"
+        android:textSize="@dimen/sub_medium_text"
+        android:text="嗯，这里还没有设备"/>
+</LinearLayout>

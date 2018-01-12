@@ -1,0 +1,82 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dell.iotplatformdemo.Fragement.BulbFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/bulb_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+       android:background="@drawable/lightbulb_off"
+        android:scaleType="fitXY"/>
+
+    <ImageButton
+        android:id="@+id/bulb_turn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_circle"
+        android:src="@drawable/ic_off_on" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/bulb_one"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_circle"
+            android:button="@null"
+            android:text="1"
+            android:checked="true"
+            android:textColor="@drawable/textselector"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/bulb_two"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@drawable/textselector"
+            android:background="@drawable/bg_circle"
+            android:button="@null"
+            android:text="2"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/bulb_three"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_circle"
+            android:textColor="@drawable/textselector"
+            android:button="@null"
+            android:text="3"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/bulb_four"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@drawable/textselector"
+            android:background="@drawable/bg_circle"
+            android:button="@null"
+            android:text="4"
+            android:textAlignment="center" />
+    </RadioGroup>
+
+</LinearLayout>
+
+</FrameLayout>

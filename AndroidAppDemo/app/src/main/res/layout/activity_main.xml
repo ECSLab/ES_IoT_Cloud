@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:id="@+id/view_root"
+    tools:context="com.example.dell.iotplatformdemo.Activity.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/device_title"
+            android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
+            android:layout_height="50dp"/>
+         <LinearLayout
+             android:layout_gravity="center"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+             <RelativeLayout
+                 android:id="@+id/device_empty"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <Button
+                     android:id="@+id/main_add_device"
+                     android:layout_width="200dp"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:layout_centerHorizontal="true"
+                     android:layout_gravity="center_vertical"
+                     android:layout_marginBottom="93dp"
+                     android:background="@color/colorPrimary"
+                     android:text="添加设备" />
+             </RelativeLayout>
+          <FrameLayout
+                 android:id="@+id/fragment_device"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"></FrameLayout>
+         </LinearLayout>
+
+    </LinearLayout>
+    <include layout="@layout/drawer_layout"
+        android:layout_gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="200dp"/>
+</android.support.v4.widget.DrawerLayout>

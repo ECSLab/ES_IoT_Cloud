@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <!-- 使底部导航栏透明 -->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!-- 给status栏设置透明颜色 -->
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/colorPrimary</item>
+        <!-- true: status栏的图标和文字为黑色；false: sstatus栏的图标和文字为白色 -->
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+    </style>
+    <style name="whiteTextStyle">
+        <item name="android:textSize">@dimen/medium_text</item>
+        <item name="android:textColor">@color/accent_white</item>
+    </style>
+        <style name="ToolTheme" parent="Theme.AppCompat.Light.NoActionBar">
+            <!--状态栏颜色-->
+            <item name="colorPrimaryDark">@color/colorPrimary</item>
+            <!--Toolbar颜色-->
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <!--返回键样式-->
+            <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+        </style>
+        <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+            <item name="color">@android:color/white</item>
+        </style>
+</resources>

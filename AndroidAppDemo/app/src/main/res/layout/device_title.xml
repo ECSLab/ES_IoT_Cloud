@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/device_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:text="客厅"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="@dimen/sub_big_text"
+        android:drawableRight="@android:drawable/ic_menu_mylocation" />
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="遥控器"
+        android:textColor="@color/white"
+        android:id="@+id/device_title"
+        android:textSize="@dimen/sub_big_text"
+        android:background="@color/colorPrimary"
+        android:layout_marginRight="100dp"/>
+</LinearLayout>
