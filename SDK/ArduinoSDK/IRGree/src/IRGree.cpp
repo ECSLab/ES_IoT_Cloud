@@ -12,9 +12,20 @@ static IRsend irsend(PIN);
 IRGree::IRGree()
 {
     irsend.begin();
+    init();
+}
+
+
+void IRGree::init()
+{
+    message[0] = 0x00;
+    message[1] = 0x00;
     message[2] = 0x06;
     message[3] = 0x0A;
+    message[4] = 0x00;
     message[5] = 0x04;
+    message[6] = 0x00;
+    message[7] = 0x00;
 }
 
 
@@ -69,7 +80,7 @@ void IRGree::sendGree(uint8_t ircode, uint8_t len)
 
 void IRGree::setCheckCode()
 {
-    uint8_t tem = mode * 3 + temp - 16 + 6 + LR_scavenging - on_off; 
+    uint8_t tem = mode * 3 + temp - 10 + LR_scavenging - on_off; 
     uint8_t num = 0x00;
     for(int i = 0; i < 4; i++)
     {
@@ -83,6 +94,8 @@ void IRGree::setCheckCode()
 
 bool IRGree::setInfo(char * json)
 {
+    init();
+
     StaticJsonBuffer<255> jsonBuffer;
     JsonObject & js =jsonBuffer.parseObject(json);
     if(!js.success())

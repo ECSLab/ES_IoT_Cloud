@@ -1,5 +1,5 @@
 # 使用继电器控制风扇
-## 此Demo的api_key = "eslabtest" device_id = "7".
+## 此Demo的api_key = "eslabtest" device_id = "8".
 ## 接口格式：
 ```
 接口的形式：

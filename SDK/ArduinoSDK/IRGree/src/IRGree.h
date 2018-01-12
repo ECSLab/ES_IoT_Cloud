@@ -47,6 +47,11 @@ private:
     void sendBit1();
 
     /*
+     *初始化
+     */
+    void init();
+
+    /*
      * 发送指定长度的数据，高位先发送
      * @parameter：ircode：发送的数据；len：发送的长度
      */
