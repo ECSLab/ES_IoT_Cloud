@@ -13,34 +13,34 @@
 1.1 如果使用gradle，在项目的build.gradle中添加
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 在app或其他module的build.gradle中添加依赖
 ```
-	dependencies {
-	        compile 'com.github.biloba123:EslabIot_Android_SDK:1.0.1'
-	}
+dependencies {
+	compile 'com.github.biloba123:EslabIot_Android_SDK:1.0.2'
+}
 ```
 1.2 如果使用maven
 ```
 <repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
 ```
 添加依赖
 ```
 <dependency>
-	    <groupId>com.github.biloba123</groupId>
-	    <artifactId>EslabIot_Android_SDK</artifactId>
-	    <version>1.0.1</version>
-	</dependency>
+    <groupId>com.github.biloba123</groupId>
+    <artifactId>EslabIot_Android_SDK</artifactId>
+    <version>1.0.2</version>
+</dependency>
 ```
 
 **2. 用项目的api_key初始化SDK**
@@ -64,19 +64,20 @@ listener: 回调接口
 示例：
 ```
 //发送"OFF"控制信息给device_id为2的设备
-EslabIot.postMessage(2, "OFF", new PostMsgListener() {
-                            @Override
-                            public void succ(String s) {
-                                //发送成功时回调，返回"	PUBLISH_SUCCESS"
-                                if (BuildConfig.DEBUG) Log.d(TAG, "succ: "+s);
-                            }
+EslabIot.postMessage(2, "OFF", 
+	new PostMsgListener() {
+	    @Override
+	    public void succ(String s) {
+		//发送成功时回调，返回"	PUBLISH_SUCCESS"
+		if (BuildConfig.DEBUG) Log.d(TAG, "succ: "+s);
+	    }
 
-                            @Override
-                            public void error(Throwable e) {
-                                //出错时回调
-                                e.printStackTrace();
-                            }
-                        });
+	    @Override
+	    public void error(Throwable e) {
+		//出错时回调
+		e.printStackTrace();
+	    }
+	});
 ```
 常见出错情况
 
@@ -109,7 +110,8 @@ listener: 回调接口
 
 示例：
 ```
-EslabIot.getHistoryData(2,EslabIot.ORDER_ASC, new GetDataListener() {
+EslabIot.getHistoryData(2,EslabIot.ORDER_ASC, 
+	new GetDataListener() {
             @Override
             public void succ(Reponse r) {
                 if (r.getCode()==0) {//获取数据成功
@@ -130,5 +132,5 @@ EslabIot.getHistoryData(2,EslabIot.ORDER_ASC, new GetDataListener() {
 这里注意，succ(Reponse r)是在请求成功后回调的，但并不意味数据获取成功（例如该设备不存在）,只有r.getCode()为0才表示获取成功，r.getData()能得到相应json格式数据；如果code不为0，则表示获取失败，失败信息可通过r.getMessage()获取
 
 **5. 高级用法**
-向设备发送控制信息后，虽然发送成功但设备可能因为某些原因为做出相应状态改变，这种情况下设备会反馈信息给数据库。因此，如果要确定设备是否成功相应应在发送信息时记录时间，再在succ回调中适当时机获取最近一条记录，通过记录时间比较，得到设备的状态
+向设备发送控制信息后，虽然发送成功但设备可能因为某些原因未做出相应状态改变，这种情况下设备会反馈信息给数据库。因此，如果要确定设备是否成功相应应在发送信息时记录时间，再在succ回调中适当时机获取最近一条记录，通过记录时间比较，得到设备的状态
 
