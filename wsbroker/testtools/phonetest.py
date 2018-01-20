@@ -7,7 +7,7 @@ def postt(posturl, data):
     return urllib.request.urlopen(req)
 
 if __name__ == '__main__':
-    posturl = 'http://47.92.48.100:9001/upload'
+    posturl = 'http://127.0.0.1:9000/upload'
     dd =  urllib.parse.urlencode({
         'api_key': 'sdakasyri',
         'device_id': '1',
