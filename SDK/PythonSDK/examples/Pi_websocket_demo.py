@@ -4,6 +4,8 @@ import time
 import json
 import wiringpi
 
+broke_data = 0xffff
+
 def DHT11():
     owpin = 7
 
@@ -49,7 +51,6 @@ def DHT11():
             TL = 0;
             C = 0
             result = getval(owpin)
-            #        print(len(result))
             if len(result) == 40:
                 for i in range(8):
                     SH *= 2;
@@ -65,20 +66,18 @@ def DHT11():
                 if ((SH + SL + TH + TL) % 256) == C and C != 0:
                     break
                 else:
-                    print("Read Sucess,But checksum error! retrying")
+                    return broke_data, broke_data 
             else:
-                print("Read failer! Retrying")
+                return broke_data, broke_data
             wiringpi.delay(200)
-        return SH, SL, TH, TL
+        return SH, TH
 
-    SH, SL, TH, TL = GetResult(owpin)
-    print("humidity: %d.%d temperature: %d.%d" % (SH, SL, TH, TL))
-    return SH, SL, TH, TL
+    SH, TH = GetResult(owpin)
+    return SH, TH
 
 def GetCurrentTime():
     TimeStruct = time.localtime(time.time())
     LocalTime = time.strftime("%Y-%m-%d %H:%M:%S",TimeStruct)
-    print(LocalTime)
     return LocalTime
 
 def Connect_to_server(ws):
@@ -88,21 +87,23 @@ def Connect_to_server(ws):
 
 def SendMessage(ws):
     while(True):
-        hum_l,hum_d,temp_l,temp_d = DHT11()
-        hum = str(hum_l) + '.' + str(hum_d)
-        temp = str(temp_l) + '.' + str(temp_d)
-        data = {"humidity": float(hum), "temperature": float(temp)}
+        hum,temp = DHT11()
+        if hum == broke_data:
+            time.sleep(2)
+            continue
+        data = {"humidity": hum, "temperature": temp}
         data = json.dumps(data)
-        time.sleep(3)
         Auth = {"api_key": "eslabtest", "device_id": "3000", "data": data, "time": GetCurrentTime()}
         Json_Send = json.dumps(Auth)
         ws.send(Json_Send)
+        time.sleep(3)
 
 def RecvFromServer(ws):
     while(True):
         jsondata = ws.recv()
         if jsondata == 'HEART_BEAT':
-            print('Heart Is Beating')
+            time = GetCurrentTime()
+            print('Heart Is Beating %s' % (time))
         else:
             print("Receive From Server: %s" % jsondata)
 
@@ -113,12 +114,12 @@ if __name__=='__main__':
     while(True):
         try:
             Connect_to_server(ws)
+            send_thread = threading.Thread(target = SendMessage, args=(ws,))
+            recv_thread = threading.Thread(target = RecvFromServer, args=(ws,))
         except:
             print("Restart connecting...")
             time.sleep(3)
             continue
-        send_thread = threading.Thread(target=SendMessage,args=(ws,))
-        recv_thread = threading.Thread(target=RecvFromServer,args=(ws,))
         send_thread.start()
         recv_thread.start()
         send_thread.join()
