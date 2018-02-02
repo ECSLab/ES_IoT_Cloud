@@ -185,13 +185,14 @@ public class DeviceApiController {
     @ApiOperation(value = "删除某个设备",notes = "谨慎操作，会删除其数据")
     @DeleteMapping(value = "/delete/device")
     public Result deleteDevice(@RequestParam(value = "userId") int userId,
-                               @RequestParam(value = "deviceId") int deviceId){
+                               @RequestParam(value = "deviceId") int deviceId,
+                               @RequestParam(value = "apiKey") String apiKey){
 
         Device device = deviceInfoService.findOneDevice(deviceId);
         if (device == null)
             return new Result(ResultEnums.DEVICE_NOT_EXIST);
 
-        Project project = projectService.findOneProject(device.getProjectId());
+        Project project = projectService.findOneProjectByIdAndApiKey(deviceId,apiKey);
         if (project == null)
             return new Result(ResultEnums.PROJECT_NOT_EXIST);
 
@@ -214,13 +215,14 @@ public class DeviceApiController {
     @ApiOperation(value = "修改设备信息")
     @PutMapping(value = "/modify/device")
     public Result<Device> modifyDevice(@RequestParam(value = "userId") int userId,
-                               @RequestParam(value = "deviceId") int deviceId,
-                               @ModelAttribute(value = "device") DeviceDto deviceDto){
+                                       @RequestParam(value = "deviceId") int deviceId,
+                                       @ModelAttribute(value = "device") DeviceDto deviceDto,
+                                       @RequestParam(value = "apiKey") String apiKey){
         Device device = deviceInfoService.findOneDevice(deviceId);
         if (device == null)
             return new Result(ResultEnums.DEVICE_NOT_EXIST);
 
-        Project project = projectService.findOneProject(device.getProjectId());
+        Project project = projectService.findOneProjectByIdAndApiKey(device.getProjectId(),apiKey);
         if (project == null)
             return new Result(ResultEnums.PROJECT_NOT_EXIST);
 

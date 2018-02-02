@@ -1,0 +1,50 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:security="http://www.springframework.org/schema/security"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<!--  Spring-Security 的配置 -->
+	<!-- 注意开启use-expressions.表示开启表达式.
+	see:http://www.family168.com/tutorial/springsecurity3/html/el-access.html
+	 -->
+	<security:http auto-config="true" use-expressions="true" >
+
+		<security:intercept-url pattern="/auth/login" access="permitAll"/>
+		<security:intercept-url pattern="/user/admin" access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/user/common" access="hasRole('ROLE_USER')"/>
+
+		<security:form-login
+				login-page="/auth/login"
+				authentication-failure-url="/auth/login?error=true"
+				default-target-url="/main/common"/>
+
+		<security:logout
+				invalidate-session="true"
+				logout-success-url="/auth/login"
+				logout-url="/auth/logout"/>
+
+	</security:http>
+
+	<!-- 指定一个自定义的authentication-manager :customUserDetailsService -->
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+			<security:password-encoder ref="passwordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<!-- 对密码进行MD5编码 -->
+	<bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" id="passwordEncoder"/>
+
+	<!--
+		通过 customUserDetailsService,Spring会自动的用户的访问级别.
+		也可以理解成:以后我们和数据库操作就是通过customUserDetailsService来进行关联.
+	 -->
+	<bean id="customUserDetailsService" class="com.wust.iot.service.impl.UserDetailsServiceImpl"/>
+
+</beans>

@@ -62,4 +62,13 @@ public interface ProjectService {
      * @return
      */
     Project findOneProjectJoinDeviceAndIndustry(Integer id);
+
+
+    /**
+     * 根据id和apiKey查找某一设备
+     * @param id
+     * @param apiKey
+     * @return
+     */
+    Project findOneProjectByIdAndApiKey(Integer id,String apiKey);
 }

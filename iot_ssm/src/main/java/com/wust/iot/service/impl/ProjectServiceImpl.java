@@ -47,5 +47,9 @@ public class ProjectServiceImpl implements ProjectService {
         return projectMapper.selectJoinDeviceAndIndustry(id);
     }
 
+    public Project findOneProjectByIdAndApiKey(Integer id, String apiKey) {
+        return projectMapper.selectByIdAndApiKey(id,apiKey);
+    }
+
 
 }

@@ -24,4 +24,6 @@ public interface ProjectMapper {
     Project selectJoinIndustry(Integer id);
 
     Project selectJoinDeviceAndIndustry(Integer id);
+
+    Project selectByIdAndApiKey(Integer id, String apiKey);
 }
