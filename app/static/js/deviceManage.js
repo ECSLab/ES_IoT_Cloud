@@ -161,23 +161,37 @@ var getDeviceList = function(search) {
 // 导出设备信息
 $("#DM_dowloadDeviceMSG").click(function(){
 	createTable();
-	setTimeout(function(){
-		doExport();
-	},3000);
+	doExport();
 })
 
 function createTable() {
-	$.get("http://47.92.48.100:8099/iot/api/device/7/4/deviceList", function(res2,status) {
-		var len = res2.data.length;
-		$("#table").empty();
-		for (var i = len - 1; i >= 0; i--) {
-			data = res2.data[i];
-			$("#table").append(
-				"<tr><td>"+data.name+"</td><td>"+data.id+"</td><td>"+data.createTime+"</td><td>"+data.dataType+
-				"</td><td>"+data.dataType+"</td><td>"+data.number+"</td><td>"+data.privacy+"</td><td>"+data.projectId+"</td><td>"+data.protocolId+"</td></tr>"
-			);
-		}
-	})
+  $.ajax({
+    async: false,
+    type: 'GET',
+    url: "http://47.92.48.100:8099/iot/api/device/7/4/deviceList",
+    success: function(res2,status){
+      var len = res2.data.length;
+		  $("#table").empty();
+		  for (var i = len - 1; i >= 0; i--) {
+			  data = res2.data[i];
+			  $("#table").append(
+				  "<tr><td>"+data.name+"</td><td>"+data.id+"</td><td>"+data.createTime+"</td><td>"+data.dataType+
+				  "</td><td>"+data.dataType+"</td><td>"+data.number+"</td><td>"+data.privacy+"</td><td>"+data.projectId+"</td><td>"+data.protocolId+"</td></tr>"
+			  );
+      }
+    }
+  })
+	// $.get("http://47.92.48.100:8099/iot/api/device/7/4/deviceList", function(res2,status) {
+	// 	var len = res2.data.length;
+	// 	$("#table").empty();
+	// 	for (var i = len - 1; i >= 0; i--) {
+	// 		data = res2.data[i];
+	// 		$("#table").append(
+	// 			"<tr><td>"+data.name+"</td><td>"+data.id+"</td><td>"+data.createTime+"</td><td>"+data.dataType+
+	// 			"</td><td>"+data.dataType+"</td><td>"+data.number+"</td><td>"+data.privacy+"</td><td>"+data.projectId+"</td><td>"+data.protocolId+"</td></tr>"
+	// 		);
+	// 	}
+	// })
 }
 
 function doExport() {

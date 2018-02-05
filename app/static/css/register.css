@@ -2,11 +2,47 @@
     padding: 0px;
     margin: 0px;
 }
+
+.icon {
+    width: 0.6em;
+    height: 0.6em;
+    /* vertical-align: -3.15em; */
+    fill: red;
+    overflow: hidden;
+    position: relative;
+    top: 1.9rem;
+    left: -1rem;
+ }
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+    url('iconfont.woff') format('woff'),
+    url('iconfont.ttf') format('truetype'),
+    url('iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:22px !important;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfontStyle{
+    position: absolute;
+    line-height: 43px;
+    left: 9px;
+}
+
 body{
     /* 布局 */
     display: flex;
     display: -webkit-flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     /* 样式 */
     margin: 0;
     background-color: #eaeff2;
@@ -14,232 +50,185 @@ body{
     overflow-x:hidden;
 }
 
-#video{
-    position: absolute;
-    z-index:-10;
-    top: 50%;
-    left: 50%;
-    margin-left: -960px;
-    margin-top:-540px; 
-    zoom: 1;
+
+
+header{
+    height: 3rem;
+    padding: 1rem;
+    background-color: #282830;
+    width: 100%;
 }
 
+header nav {
+    float: right;
+    margin-top: 1%;
+    width: 20%;
+}
+
+header nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    margin-right: 8%;
+}
+
+header img {
+    margin-left: 3%;
+}
 .main{
     /* 布局 */
-    width: 800px;
-    padding: 0px 0px 40px 0px;
-    margin-top: 50px;
+    width: 1030px;
+    margin: 50px 0px;
     justify-content: center;
     align-items: center;
     /* 样式 */
-    /* background-color: rgba(255, 255, 255, 0.9); */
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: #fff; */
     
     border-radius: 4px;
     box-shadow: 0px 0px 3px #aaa;
 }
 
-/* 标题 */
-h1{
-    text-align: center;
-    font-size: 40px;
-    color: #19bbff;
-}
-
-/* 登录部分 */
-/* 包含所有关于登录的样式 */
-/* 包含part1和part2 */
-.contentPart{
+.register_contentPart{
     /* 布局 */
     position: relative;
-    margin: 40px 260px;
+    margin: 40px 300px;
+    width: 100%;
     /* 样式 */
 }
 
-/* 登录选择样式 头部 */
-.choseHeader{
-    margin: 0px 0px 40px 0px;
+.register_contentPart .form-group{
+    width: 100%;
 }
-.choseHeader nav{
-    text-align: center;
-    text-decoration: none;
+
+.register_contentPart .form-group select,
+.register_contentPart .form-group input,
+.register_contentPart .form-group textarea{
+    border-radius: 3px;
+    border: 1px solid #dddee3;
+    padding: 0 8px;
+    font-family: "Microsoft YaHei",Arial,sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 42px;
+    height: 42px;
+    
+}
+
+.register_contentPart .form-group input{
+    width: 349px;
+    padding-left: 42px;
+}
+
+.register_contentPart .form-group input:focus,select:focus,textarea:focus{
+    -webkit-box-shadow: 2 0 10px #19bbff;
+    -moz-box-shadow: 0 0 10px #19bbff;
+    box-shadow: 0 0 10px #19bbff;
+}
+
+.register_contentPart .form-group label {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    line-height: 44px;
+}
+
+.register_contentPart .workplace div{
     display: flex;
     display: -webkit-flex;
-    justify-content: left;
-    height: 40px;
-    /* nav的边框 */
-    background-color: #dbe1e4;
+    flex-direction: row;
+    width: 403px;
+    justify-content: space-between;
 }
 
-.choseHeader nav a{
-    float: left;
-    width:10%;
-    padding-top: 15px;
-    color: #7a7e89;
+.register_contentPart .form-group select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../imgs/select.png) no-repeat transparent;
+    background-size: 15px;
+    background-position-x: 93px;
+    background-position-y: 17px;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.register_contentPart .form-group select:last-child{
+    margin-right: 0;
+}
+
+.register_contentPart .form-group textarea{
+    height: 74px;
+    padding-left: 20px;
+    width: 373px;
+    overflow: hidden;
+}
+
+
+.register_contentPart .form-group button{
+    border-radius: 3px;
+    border: 1px solid #dddee3;
+    font-family: "Microsoft YaHei",Arial,sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 42px;
+    height: 47px;
+    width: 403px;
+    margin-top: 2rem;
+    color: white;
+    outline: none;
+}
+
+.buttonNotAllow{
+    cursor: not-allowed;
+}
+
+.buttonAllow{
+    background-color: #19bbff;
+    cursor: pointer;
+}
+
+/*错误提示*/
+.errorsList{
+	position: relative;
+	top: -5px;
+	left: 20px;
+	z-index: 10;
+}
+
+.errorsList li{
+	display: inline-block;
+}
+
+.errorsList li span{
+    position: relative;
     font-size: 0.8rem;
-    text-decoration: none;
-    margin-left: 2px;
-}
-.choseHeader nav a:hover{
-    background-color: white;
-    padding-top: 13px;
-}
-
-.selected{
-    background-color: white;
-}
-
-.contentPart p{
-    margin-top: 10px;
-}
-
-
-/* form-group样式 */
-.form-footer{
-	margin-top: 30px;
-}
-.form-footer h3{
-	font-weight: normal;
-	display: inline;
-}
-.form-footer a{
-	float: right;
+	background-color: #ff4830;
+	color: white;
+	padding: 0px 10px;
+	border-radius: 3px;
 	
-	color: #19bbff;
-	position: relative;
-	top: 7px;
-	font-size: 0.8em;
-}
-.form-group{
-    position: relative;
-    padding: 5px;
-    
-    /*样式*/
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-/* 模拟输入框被选中时的样式 */
-.input{
-    padding: 6px;
-    
-    /*样式*/
-    border-radius: 5px;
-    border: 1px solid #63b8ff;
-    box-shadow: 0px 0px 4px  #00BFFF;
-}
-/*小图标*/
-.username{
-	background-image: url(../imgs/051.png);
-	background-repeat: no-repeat;
-	background-position-x: 5px;
-    background-position-y: 4px;
-    background-size: 30px;
-}
-.passImg{
-	background-image: url(../imgs/029.png);
-	background-repeat: no-repeat;
-	background-position-x: 5px;
-    background-position-y: 3px;
-    background-size: 30px;
+	display: none;
 }
 
-.rePassImg{
-	background-image: url(../imgs/030.png);
-	background-repeat: no-repeat;
-	background-position-x: 5px;
-    background-position-y: 3px;
-    background-size: 30px;
+.errorsList li span::before{
+	content: "";
+	position: absolute;
+	top: -6px;
+	color: red;
+	left: 15px;
+	
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #FF4830;
 }
 
-.phone{
-	background-image: url(../imgs/079.png);
-	background-repeat: no-repeat;
-	background-position-x: 5px;
-    background-position-y: 3px;
-    background-size: 30px;
+.error{
+	color: #d95c5c;
+	border: 1px solid #cc334c;
+	background-color: #fff0f0;
 }
-
-.email{
-	background-image: url(../imgs/063.png);
-	background-repeat: no-repeat;
-	background-position-x: 5px;
-    background-position-y: 3px;
-    background-size: 30px;
-}
-
-.confirm{
-    width: 60%;
-	background-image: url(../imgs/033.png);
-	background-repeat: no-repeat;
-	background-position-x: 5px;
-    background-position-y: 3px;
-    background-size: 30px;
-}
-
-.containConfirm{
-    position: relative;
-}
-
-/* 获取验证码按钮样式 */
-#confirmButton{
-    position: absolute;
-    left: 190px;
-    top: -38px;
-
-    border-radius: 5px;
-    border: none;
-    width: 90px;
-    padding: 10px;
-}
-
-.clock{
-    opacity: 1;
-    background-color: #00c0f1;
-    color: white;
-}
-
-/* 隐藏警告 */
-.warning{
-    visibility: hidden;
-    position: relative;
-    left: 5px;
-    font-size: 0.7rem;
-}
-/* 输入框样式 */
-.form-group input{
-	position: relative;
-	left: 40px;
-	width: 75%;
-    padding: 5px 0px;
-    border: none;
-}
-.form-group input:focus{
-    outline-color: white;
-}
-
-/* 注册或登录按钮的样式 */
-.submit{
-    width: 100%;
-    padding: 10px 0px;
-    margin-top: 25px;
-    background-color: #00c0f1;
-    border:none;
-    border-radius: 2px;
-    color: white;
-    font-size: 20px;
-}
-
-/* 功能模块（tab选择） */
-.show{
-    display: block;
-}
-
-/* 提示信息样式 */
-.reminderPass{
-    font-size: 0.8em;
-    color: #00c0f1;
-}
-.reminderError{
-    font-size: 0.8em;
-    color: red;
+.right{
+	color: #3c763d;
+	background-color: #eeffe7;
+	border-color: #bedebe;
 }
