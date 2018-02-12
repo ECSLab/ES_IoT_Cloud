@@ -35,7 +35,7 @@ public class ProjectServiceImpl implements ProjectService {
         return projectMapper.deleteByPrimaryKey(id);
     }
 
-    public List<Project> findProjectListByList(Integer id) {
+    public List<Project> findProjectListById(Integer id) {
         return projectMapper.selectProjectListByUserId(id);
     }
 

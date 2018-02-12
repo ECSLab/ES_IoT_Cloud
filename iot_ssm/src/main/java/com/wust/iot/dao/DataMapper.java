@@ -34,4 +34,30 @@ public interface DataMapper {
     int deleteBydeviceId(Integer deviceId);
 
     Data selectDataLatest(Integer deviceId);
+
+    List<Data> selectListByDeviceIdLimit(@Param("deviceId") Integer deviceId,
+                                         @Param("startLine") Integer startLine,
+                                         @Param("pageSize") Integer pageSize);
+
+    List<Data> selectListByDeviceIdOrderByDescLimit(@Param("deviceId") Integer deviceId,
+                                                    @Param("startLine") Integer startLine,
+                                                    @Param("pageSize") Integer pageSize);
+
+    List<Data> selectListByDeviceIdDuringTimeLimit(@Param("deviceId") Integer deviceId,
+                                                   @Param("startTime") Date startTime,
+                                                   @Param("endTime") Date endTime,
+                                                   @Param("startLine") Integer startLine,
+                                                   @Param("pageSize") Integer pageSize);
+
+    List<Data> selectListByDeviceIdDuringTimeOrderByDescLimit(@Param("deviceId") Integer deviceId,
+                                                              @Param("startTime") Date startTime,
+                                                              @Param("endTime") Date endTime,
+                                                              @Param("startLine") Integer startLine,
+                                                              @Param("pageSize") Integer pageSize);
+
+    int selectListCountByDeviceIdDuringTime(@Param("deviceId") Integer deviceId,
+                                            @Param("startTime") Date startTime,
+                                            @Param("endTime") Date endTime);
+
+    int selectListCountByDeviceId(Integer deviceId);
 }

@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	var name,industryName,createTime,deviceCount;
 	var html='';
+	var userId = $('.user_id').val();
 	$.ajax({
 		type:"GET",
 		async:false,
-		url:"http://47.92.48.100:8099/iot/api/project/1/list",
+		url:"api/project/"+userId+"/list",
 		dataType:"json",
-		data:{userId:1},
 		success:function(res){
 			var data=res.data;
 			for(var i=0;i<data.length;i++){
@@ -17,7 +17,7 @@ $(document).ready(function(){
 				deviceCount=data[i].deviceCount;
 				html+='<div class="product-list">';
 				html+='<div class="product-content">';
-					html+='<div class="product-name">';
+				html+='<div class="product-name">';
 						html+='<a href="#" class="dev-name small_icon1" title="" style="position: relative; display: inline-block;">';
 							html+='<h3>'+name+'</h3>';
 							html+='<div class="tooltip tooltip_name">';

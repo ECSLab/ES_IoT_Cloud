@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$.ajax({
 		type:"get",
-		url:"http://47.92.48.100:8099/iot/api/projectIndustry/list",
+		url:"../../api/projectIndustry/list",
 		dataType:"json",
 		data:"",
 		async:false,
@@ -57,18 +57,19 @@ $(document).ready(function(){
 			var name=$("#product-name").val(),
 				industryId=$("#industry").val(),
 				profile=$("#product-profile").val(),
-				userId=1;
+				userId=$('.user_id').val();
 			$.ajax({
 				type:"post",
 				async:false,
-				url: "http://47.92.48.100:8099/iot/api/project/create",
+				url: "../../api/project/create",
 		        dataType:"json",
-		        data:{"userId":parseInt('1'),"name":name,"industryId":parseInt(industryId),"profile":profile},
+		        data:{"userId":parseInt(userId),"name":name,"industryId":parseInt(industryId),"profile":profile},
 		        success: function (res) {
-		        	alert(res.message);	            
+		        	alert(res.message);
+                    // window.location.href = "/";
 		        },
 		        error:function(res){
-		        	alert("error");
+		        	alert("error"+res);
 		        }
 	    	});
 		}

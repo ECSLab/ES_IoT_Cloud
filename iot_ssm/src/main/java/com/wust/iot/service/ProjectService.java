@@ -47,7 +47,7 @@ public interface ProjectService {
      * @param id
      * @return
      */
-    List<Project> findProjectListByList(Integer id);
+    List<Project> findProjectListById(Integer id);
 
     /**
      * 查询一个项目 关联行业表
@@ -70,5 +70,5 @@ public interface ProjectService {
      * @param apiKey
      * @return
      */
-    Project findOneProjectByIdAndApiKey(Integer id,String apiKey);
+    Project findOneProjectByIdAndApiKey(Integer id, String apiKey);
 }

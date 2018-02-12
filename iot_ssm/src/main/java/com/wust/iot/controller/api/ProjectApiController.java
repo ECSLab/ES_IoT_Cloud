@@ -47,7 +47,7 @@ public class ProjectApiController {
     @ApiOperation(value = "获取某一用户的产品列表")
     @GetMapping(value = "/{userId}/list")
     public Result<List<Project>> getProjectList(@PathVariable(value = "userId") int userId) {
-        List<Project> list = projectService.findProjectListByList(userId);
+        List<Project> list = projectService.findProjectListById(userId);
         if (list == null)
             return new Result(ResultEnums.SERVER_ERROR);
 

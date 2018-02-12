@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>首页</title>
+    <link type="favicon" rel="shortcut icon" href="static/img/favicon.ico" />
 </head>
 <body>
     ES IoT首页

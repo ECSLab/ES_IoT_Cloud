@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/login.css">
     <link rel="stylesheet" type="text/css" href="static/css/iconfont.css">
     <link href="static/icheck/skins/square/blue.css" rel="stylesheet">
+    <link type="favicon" rel="shortcut icon" href="static/img/favicon.ico" />
     <script type="text/javascript" src="static/js/jquery-3.1.1.min.js"></script>
 </head>
 <body>

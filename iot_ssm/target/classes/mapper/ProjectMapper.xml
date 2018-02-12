@@ -154,4 +154,10 @@
     FROM IoT_platform.t_project_info p , IoT_platform.t_device_info d
     WHERE p.id = d.project_id AND p.id = #{0};
   </select>
+
+  <select id="selectByIdAndApiKey" resultMap="BaseResultMap">
+    SELECT *
+    FROM IoT_platform.t_project_info p
+    WHERE p.id = #{0} and p.api_key=#{1};
+  </select>
 </mapper>

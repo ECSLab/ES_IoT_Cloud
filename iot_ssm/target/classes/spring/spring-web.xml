@@ -31,15 +31,42 @@
 		(2):允许使用 / 作为整体映射-->
 	<mvc:default-servlet-handler/>
 
-	<!--3:配置jsp显示ViewResolver-->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-		<!--<property name="prefix" value="/WEB-INF/jsp/"/>-->
-		<property name="prefix" value="/jsp/"/>
-		<property name="suffix" value=".jsp"/>
+
+
+	<!--配置thymeleaf模板引擎-->
+	<!--Thymeleaf 视图解析器，优先级最高-->
+	<bean id="templateResolver"
+	     class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+		<property name="prefix" value="/templates/" />
+		<property name="suffix" value=".html" />
+		<!--不检查html错误语法-->
+		<property name="templateMode" value="LEGACYHTML5" />
+		<property name="cacheable" value="false" />
+		<property name="order" value="#{T(org.springframework.core.Ordered).HIGHEST_PRECEDENCE}" />
+		<!--防止乱码错误-->
+		<property name="characterEncoding" value="UTF-8"/>
+	</bean>
+	<bean id="templateEngine"
+		  class="org.thymeleaf.spring4.SpringTemplateEngine">
+		<property name="templateResolver" ref="templateResolver" />
+	</bean>
+	<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+		<property name="templateEngine" ref="templateEngine" />
+		<!--防止乱码错误-->
+		<property name="characterEncoding" value="UTF-8"/>
 	</bean>
 
-	<!--4:扫描web相关的bean-->
+	<!--3:配置jsp显示ViewResolver-->
+	<!--不采用jsp-->
+	<!--如果需要jsp，则需要设置order-->
+	<!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>-->
+
+
+		<!--4:扫描web相关的bean-->
 	<context:component-scan base-package="com.wust.iot.controller"/>
 	<!--5:扫描其他相关配置文件-->
 	<context:component-scan base-package="com.wust.iot.configuration"/>

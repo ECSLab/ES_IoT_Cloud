@@ -178,7 +178,7 @@ public class DeviceApiController {
         if (project.getUserId() != userId)
             return new Result(ResultEnums.USER_DO_NOT_HAVE_PROJECT);
 
-        List<Data> list = dataService.findDateListByDeviceIdDuringTimeOrderByDesc(deviceId, startTime, endTime);
+        List<Data> list = dataService.findDataListByDeviceIdDuringTimeOrderByDesc(deviceId, startTime, endTime);
         return new Result<List<Data>>(ResultEnums.SUCCESS, list);
     }
 

@@ -41,21 +41,31 @@ $(document).ready(function(){
 			
 		}
 	});
+
+    $('#pass').keyup(function(){
+        if(event.which==13){
+            $('#submit').click();
+        }
+    });
+
 	$("#submit").click(function(){
 		var username=$("#name").val();
 		var password=$("#pass").val();
 		$.ajax({
 			type:"post",
 			async:false,
-			url: "https://wusteslab.tech/iot/api/user/doLogin",
+			url: "api/user/doLogin",
 	        dataType:"json",
 	        data:{username:username,password:password},
 	        success: function (res) {
-	        	alert(res.message);
+				if(res.code === 0){
+                    window.location.href = 'project';
+				}
+	        	// alert(res.message);
 	            // if(res.code==0)
 	            //     alert("ok");
 	        },
-	        erro:function(res){
+	        error:function(res){
 	        	alert(res.message);
 	        	// alert(res.message);
 	        	// if (res.code!=0){

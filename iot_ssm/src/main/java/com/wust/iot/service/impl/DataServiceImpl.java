@@ -2,6 +2,7 @@ package com.wust.iot.service.impl;
 
 import com.wust.iot.dao.DataMapper;
 import com.wust.iot.model.Data;
+import com.wust.iot.model.Device;
 import com.wust.iot.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +46,7 @@ public class DataServiceImpl implements DataService {
         return dataMapper.selectListByDeviceIdDuringTime(deviceId, startTime, endTime);
     }
 
-    public List<Data> findDateListByDeviceIdDuringTimeOrderByDesc(Integer deviceId, Date startTime, Date endTime) {
+    public List<Data> findDataListByDeviceIdDuringTimeOrderByDesc(Integer deviceId, Date startTime, Date endTime) {
         return dataMapper.selectListByDeviceIdDuringTimeOrderByDesc(deviceId, startTime, endTime);
     }
 
@@ -55,5 +56,29 @@ public class DataServiceImpl implements DataService {
 
     public Data findOneDataLatest(Integer deviceId) {
         return dataMapper.selectDataLatest(deviceId);
+    }
+
+    public List<Data> findDataListByDeviceIdLimit(Integer deviceId, Integer startLine, Integer pageSize) {
+        return dataMapper.selectListByDeviceIdLimit(deviceId,startLine,pageSize);
+    }
+
+    public List<Data> findDataListByDeviceIdOrderByDescLimit(Integer deviceId, Integer startLine, Integer pageSize) {
+        return dataMapper.selectListByDeviceIdOrderByDescLimit(deviceId,startLine,pageSize);
+    }
+
+    public List<Data> findDataListByDeviceIdDuringTimeLimit(Integer deviceId, Date startTime, Date endTime,Integer startLine,Integer pageSize) {
+        return dataMapper.selectListByDeviceIdDuringTimeLimit(deviceId,startTime,endTime,startLine,pageSize);
+    }
+
+    public List<Data> findDataListByDeviceIdDuringTimeOrderByDescLimit(Integer deviceId, Date startTime, Date endTime,Integer startLine,Integer pageSize) {
+        return dataMapper.selectListByDeviceIdDuringTimeOrderByDescLimit(deviceId,startTime,endTime,startLine,pageSize);
+    }
+
+    public int findDataListCountByDeviceIdDuringTime(Integer deviceId, Date startTime, Date endTime) {
+        return dataMapper.selectListCountByDeviceIdDuringTime(deviceId,startTime,endTime);
+    }
+
+    public int findDataListCountByDeviceId(Integer deviceId) {
+        return dataMapper.selectListCountByDeviceId(deviceId);
     }
 }

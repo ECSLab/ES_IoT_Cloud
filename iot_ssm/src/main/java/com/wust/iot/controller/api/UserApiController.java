@@ -16,6 +16,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -54,7 +56,7 @@ public class UserApiController {
     public Result<User> doLogin(@RequestParam(value = "username") String username,
                                 @RequestParam(value = "password") String password,
                                 HttpServletRequest request) {
-
+        logger.debug("进入api/doLogin");
         HttpSession session = request.getSession();
         if (username != null) {
             //判断是手机号还是用户名
@@ -88,6 +90,7 @@ public class UserApiController {
                         user.setToken("Web does not need");
                         user.setPassword(null);
                         session.setAttribute("user",user);
+//                        session.setAttribute("SPRING_SECURITY_CONTEXT",  SecurityContextHolder.getContext());
                         //TODO 待添加二维码  自动登录功能
                     }
                     return new Result<User>(ResultEnums.SUCCESS, user);

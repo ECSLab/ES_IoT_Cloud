@@ -1,8 +1,14 @@
 package com.wust.iot.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import java.security.MessageDigest;
 
-public class Md5Util {
+public class Md5Util implements PasswordEncoder{
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
      * 获得MD5加密的方法
@@ -79,5 +85,27 @@ public class Md5Util {
     public static boolean verifyPassword(String inputStr, String MD5Code,
                                          int times) {
         return getMD5ofStr(inputStr, times).equals(MD5Code);
+    }
+
+
+    /**
+     * spring security加密并返回
+     * @param rawPassword
+     * @return
+     */
+    public String encode(CharSequence rawPassword) {
+        return getMD5ofStr(rawPassword.toString());
+    }
+
+    /**
+     * spring security加密匹配
+     * @param rawPassword
+     * @param encodedPassword
+     * @return
+     */
+    public boolean matches(CharSequence rawPassword, String encodedPassword) {
+        logger.debug("原始串:"+rawPassword);
+        logger.debug("加密串:"+encodedPassword);
+        return encode(rawPassword).equals(encodedPassword);
     }
 }
