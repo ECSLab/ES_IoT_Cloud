@@ -1,0 +1,271 @@
+/*遮罩层*/
+#bg{
+	display: none;
+	position: absolute;
+	background-color: rgba(0,0,0,0.125);
+	width: 100%;
+	height:calc(2*100%);
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+}
+
+/*弹出框的出现效果*/
+.showStyle {
+	margin-top: 30px;
+}
+
+
+/*添加设备*/
+
+#createDevice {
+	position: fixed;
+	left: 50%;
+	top: 0px;
+	margin-left: -250px;
+	margin-top: 20px;
+	width: 500px;
+	background-color: white;
+	display: none;
+	z-index: 101;
+	transition: margin-top 1s linear, background-color 10s linear;
+	border-radius: 4px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .125)!important;
+}
+
+#createDevice h4 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+#createDevice header{
+	padding: 20px 0px;
+}
+
+#createDevice header,#createDevice article,#createDevice footer {
+	margin: 0 30px;
+}
+
+
+/*Header*/
+
+#createDevice header {
+	border-bottom: solid #e5e5e5 1px;
+	flex-direction: row;
+}
+
+#zl_protocol {
+	background-color: #33deb4;
+	border-radius: 7px;
+	color: white;
+	font-size: 15.5px;
+	padding: 4px 5px;
+	margin-left: 20px;
+}
+
+
+/*section*/
+#cDSection{
+	padding: 10px;
+}
+
+#cDSection .form-group {
+	position: relative;
+	margin-bottom: 15px;
+	line-height: 2.0em;
+}
+/*设备编号下的提示标语*/
+.zl_tips{
+	display: inline-block;
+	font-size: 0.8rem;
+	margin-top: .6rem;
+	line-height: 1.1em;
+}
+
+#cDSection .form-group>label {
+	display: block;
+	font-weight: 500;
+	font-size: 1.2rem;
+}
+
+#cDSection .form-group>label::before {
+	content: "*";
+	color: red;
+	font-family: fontello;
+	font-weight: 400;
+	width: 1em;
+	margin-right: .2em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*错误提示*/
+.errorsList{
+	position: absolute;
+	top: 65px;
+	left: 7px;
+	z-index: 10;
+
+}
+
+.errorsList li{
+	display: inline-block;
+}
+
+.errorsList li span{
+	position: relative;
+	background-color: #ff4830;
+	color: white;
+	padding: 0px 10px;
+	border-radius: 3px;
+	
+	display: none;
+}
+
+.errorsList li span::before{
+	content: "";
+	position: absolute;
+	top: -6px;
+	color: red;
+	left: 15px;
+	
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #FF4830;
+}
+
+.zl_error{
+	color: #d95c5c;
+	border: 1px solid #cc334c;
+	background-color: #fff0f0;
+}
+.zl_right{
+	color: #3c763d;
+	background-color: #eeffe7;
+	border-color: #bedebe;
+}
+
+#cDSection .form-group>input {
+	border-radius: 3px;
+	border: rgb(210, 214, 222) 1px solid;
+	color: rgb(85, 85, 85);
+	
+	/*padding: 6px 12px;*/
+	padding-left: 6px;
+	width: 100%;
+	height: 44px;
+}
+#cDSection .form-group>input:focus,select:focus{
+	border: 1px solid #3c8dbc;
+	outline: none;
+}
+
+
+/*footer*/
+#createDevice footer{
+	display: flex;
+	justify-content: flex-end;
+	border-top: solid #e5e5e5 1px;
+	padding: 15px 15px 25px 15px;
+}
+
+#createDevice footer button{
+	font-size: 16px;
+	padding: 16px 25px;
+	border-radius: 3px;
+	transition: background-color 0.2s linear,color 0.2s linear;
+	cursor: pointer;
+}
+
+
+#submitCD{
+	background-color: rgb(40, 191, 249);
+	color: white;
+	font-weight: 400;
+	border: 1px outset ;
+	
+	margin-right: 4px;
+	outline: none;
+}
+
+#submitCD:hover{
+	background-color: #40d8ff;
+}
+
+#submitCD:active{
+	background-color: #0ba2f1;
+}
+
+
+#closeCD{
+	background-color: white;
+	color: rgb(125, 129, 139);
+	border: solid rgb(122, 126, 137) 1px;
+	outline: none;
+}
+
+#closeCD:hover{
+	background-color: #b1b7c7;
+	color: white;
+}
+
+#closeCD:active{
+	background-color: #7a7e89;
+	color: white;
+	outline: #B1B7C7;
+}
+
+/* radio样式 */
+.priRadio span::before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px;
+	width: .6em;
+	height: .6em;
+	border: 1px solid #e5e5e5;
+	border-radius: 100%;
+	margin-left: 1em;
+	margin-right: .8em;
+}
+
+.priRadio:hover span::before{
+	border: 1px solid #01CD78;
+}
+
+.form-group input[type="radio"]:checked+span::before{
+	background-color: #01CD78;
+	background-clip: content-box;
+	border: 1px solid #01CD78;
+}
+
+.form-group  input[type="radio"]{
+    display: none;
+}
+
+select{
+	appearance:none;
+  	-moz-appearance:none;
+  	-webkit-appearance:none;
+    background: transparent;
+    font: 400 13.3333px Arial;
+    padding: 12px 40px 12px 20px;
+    border: rgb(210, 214, 222) 1px solid;
+    border-radius: 4px;
+    margin-left: 1.5em;
+    background:url(../imgs/select.png) no-repeat transparent;
+	background-size: 15px;
+	background-position-x: 76px;
+	background-position-y: 15px;
+}
+
+.form-group:last-child{
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+}
+
+option{
+	font: 400 13.3333px Arial;
+	border: 1px #00BFFF solid;
+}

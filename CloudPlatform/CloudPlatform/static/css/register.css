@@ -1,0 +1,234 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.icon {
+    width: 0.6em;
+    height: 0.6em;
+    /* vertical-align: -3.15em; */
+    fill: red;
+    overflow: hidden;
+    position: relative;
+    top: 1.9rem;
+    left: -1rem;
+ }
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+    url('iconfont.woff') format('woff'),
+    url('iconfont.ttf') format('truetype'),
+    url('iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:22px !important;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfontStyle{
+    position: absolute;
+    line-height: 43px;
+    left: 9px;
+}
+
+body{
+    /* 布局 */
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    flex-direction: column;
+    /* 样式 */
+    margin: 0;
+    background-color: #eaeff2;
+    color: black;
+    overflow-x:hidden;
+}
+
+
+
+header{
+    height: 3rem;
+    padding: 1rem;
+    background-color: #282830;
+    width: 100%;
+}
+
+header nav {
+    float: right;
+    margin-top: 1%;
+    width: 20%;
+}
+
+header nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    margin-right: 8%;
+}
+
+header img {
+    margin-left: 3%;
+}
+.main{
+    /* 布局 */
+    width: 1030px;
+    margin: 50px 0px;
+    justify-content: center;
+    align-items: center;
+    /* 样式 */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: #fff; */
+    
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #aaa;
+}
+
+.register_contentPart{
+    /* 布局 */
+    position: relative;
+    margin: 40px 300px;
+    width: 100%;
+    /* 样式 */
+}
+
+.register_contentPart .form-group{
+    width: 100%;
+}
+
+.register_contentPart .form-group select,
+.register_contentPart .form-group input,
+.register_contentPart .form-group textarea{
+    border-radius: 3px;
+    border: 1px solid #dddee3;
+    padding: 0 8px;
+    font-family: "Microsoft YaHei",Arial,sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 42px;
+    height: 42px;
+    
+}
+
+.register_contentPart .form-group input{
+    width: 349px;
+    padding-left: 42px;
+}
+
+.register_contentPart .form-group input:focus,select:focus,textarea:focus{
+    -webkit-box-shadow: 2 0 10px #19bbff;
+    -moz-box-shadow: 0 0 10px #19bbff;
+    box-shadow: 0 0 10px #19bbff;
+}
+
+.register_contentPart .form-group label {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    line-height: 44px;
+}
+
+.register_contentPart .workplace div{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    width: 403px;
+    justify-content: space-between;
+}
+
+.register_contentPart .form-group select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../imgs/select.png) no-repeat transparent;
+    background-size: 15px;
+    background-position-x: 93px;
+    background-position-y: 17px;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.register_contentPart .form-group select:last-child{
+    margin-right: 0;
+}
+
+.register_contentPart .form-group textarea{
+    height: 74px;
+    padding-left: 20px;
+    width: 373px;
+    overflow: hidden;
+}
+
+
+.register_contentPart .form-group button{
+    border-radius: 3px;
+    border: 1px solid #dddee3;
+    font-family: "Microsoft YaHei",Arial,sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 42px;
+    height: 47px;
+    width: 403px;
+    margin-top: 2rem;
+    color: white;
+    outline: none;
+}
+
+.buttonNotAllow{
+    cursor: not-allowed;
+}
+
+.buttonAllow{
+    background-color: #19bbff;
+    cursor: pointer;
+}
+
+/*错误提示*/
+.errorsList{
+	position: relative;
+	top: -5px;
+	left: 20px;
+	z-index: 10;
+}
+
+.errorsList li{
+	display: inline-block;
+}
+
+.errorsList li span{
+    position: relative;
+    font-size: 0.8rem;
+	background-color: #ff4830;
+	color: white;
+	padding: 0px 10px;
+	border-radius: 3px;
+	
+	display: none;
+}
+
+.errorsList li span::before{
+	content: "";
+	position: absolute;
+	top: -6px;
+	color: red;
+	left: 15px;
+	
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #FF4830;
+}
+
+.error{
+	color: #d95c5c;
+	border: 1px solid #cc334c;
+	background-color: #fff0f0;
+}
+.right{
+	color: #3c763d;
+	background-color: #eeffe7;
+	border-color: #bedebe;
+}

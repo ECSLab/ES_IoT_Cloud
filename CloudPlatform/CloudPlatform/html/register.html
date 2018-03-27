@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../static/css/register.css">
+    <link rel="stylesheet" type="text/css" href="../static/fonticon/iconfont.css">
+    <script src="../static/fonticon/iconfont.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="../static/imgs/ES IoT2.png" alt="">
+        <nav>
+            <a href="#">意见反馈</a>
+            <a href="/loginIndex">已有账号，去登录</a>
+        </nav>
+
+    </header>
+
+    <div class="main">
+        <!-- 注册界面 -->
+        <section class="register_contentPart">
+            <!-- 账号 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-asterisks-1-copy"></use>
+                </svg>
+                <label for="username">用户名：</label>
+                <i class="iconfont iconfontStyle">&#xe603;</i>
+                <input type="text" name="username" id="username" placeholder="用户名" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="usernameError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 真实姓名 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href=""></use>
+                </svg>
+                <label for="realname">真实姓名：</label>
+                <i class="iconfont iconfontStyle">&#xe933;</i>
+                <input type="text" name="realname" id="realname" placeholder="请输入您的真实姓名" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="realnameError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- QQ -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href=""></use>
+                </svg>
+                <label for="qq">QQ账号：</label>
+                <i class="iconfont iconfontStyle">&#xe696;</i>
+                <input type="text" name="qq" id="qq" placeholder="请输入您的QQ账号" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="qqError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 密码 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-asterisks-1-copy"></use>
+                </svg>
+                <label for="password">密码：</label>
+                <i class="iconfont iconfontStyle">&#xe6b2;</i>
+                <input type="password" name="password" id="password" placeholder="密码" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="passwordError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 确认密码 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-asterisks-1-copy"></use>
+                </svg>
+                <label for="repassword">确认密码：</label>
+                <i class="iconfont iconfontStyle">&#xe6a1;</i>
+                <input type="password" name="repassword" id="repassword" placeholder="确认密码" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="repasswordError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 手机号 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-asterisks-1-copy"></use>
+                </svg>
+                <label for="phonenumber">手机号：</label>
+                <i class="iconfont iconfontStyle">&#xe682;</i>
+                <input type="text" name="phonenumber" id="phonenumber" placeholder="请输入手机号" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="phonenumberError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 邮箱 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href=""></use>
+                </svg>
+                <label for="email">请输入您的邮箱</label>
+                <i class="iconfont iconfontStyle">&#xe65c;</i>
+                <input type="text" name="email" id="email" placeholder="请输入您的邮箱" />
+                <ul class="errorsList">
+                    <li>
+                        <span id="emailError">
+                            必填项
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 工作地点 -->
+            <div class="form-group workplace">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href=""></use>
+                </svg>
+                <label for="workspace">工作地点：</label>
+
+                <div>
+                    <select name="province" id="province">
+                    </select>
+
+                    <select name="city" id="city">
+                        <option value="0">请选择</option>
+                    </select>
+
+                    <select name="area" id="area">
+                        <option value="0">请选择</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 个性签名 -->
+            <div class="form-group">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href=""></use>
+                </svg>
+                <label for="personalProfile">个人简介：</label>
+                <textarea name="personalProfile" id="personalProfile" placeholder="请输入您的个人简介" cols="55" rows="3"></textarea>
+            </div>
+
+            <!-- 注册 -->
+            <div class="form-group">
+                <button class="submit buttonNotAllow" disabled id="register">立即注册</button>
+            </div>
+    </div>
+    </section>
+    </div>
+    <script src="../static/js/jquery-1.11.0.min.js"></script>
+    <script src="../static/js/register.js"></script>
+    <script src="../static/js/workplace.js"></script>
+</body>
+
+</html>

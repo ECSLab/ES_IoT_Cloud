@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>添加项目</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/createDevice.css" />
+
+</head>
+
+<body>
+	<!--body-->
+	<button id="addDevice">添加项目</button>
+	<div id="bg">
+
+	</div>
+	<article id="createDevice">
+		<header>
+			<h4>接入设备
+				<span id="zl_protocol">HTTP协议</span>
+				</h5>
+		</header>
+		<article id="cDSection">
+			<div class="form-group">
+				<label for="deviceName">设备名称：</label>
+				<input type="text" name="deviceName" id="deviceName" placeholder="设备名称" />
+				<ul class="errorsList">
+					<li>
+						<span id="nameError">
+							必填项
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="form-group">
+				<label for="deviceAuth">设备编号：</label>
+				<input type="text" name="deviceAuth" id="deviceAuth" placeholder="请输入厂商编码的设备标识号码" />
+				<ul class="errorsList">
+					<li>
+						<span id="authError">
+							必填项
+						</span>
+					</li>
+				</ul>
+				<span class="zl_tips">设备间不能设置相同的字符串，最多512个字母、数字或字母与数字组合的字符串。</span>
+
+			</div>
+			<div class="form-group">
+				<label>数据保密性：</label>
+				<div>
+					<label for="secrecy" class="priRadio">
+						<input type="radio" name="devicePri" id="secrecy" value="0" />
+						<span>私有</span>
+					</label>
+
+					<label for="open" class="priRadio">
+						<input type="radio" name="devicePri" id="open" value="1" checked/>
+						<span>公开</span>
+					</label>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label>设备接入协议：</label>
+				<div>
+					<select name="protocol" id="protocol">
+					</select>
+				</div>
+
+				<label>上传数据类型：</label>
+				<div>
+					<select name="datatype" id="dataType">
+					</select>
+				</div>
+			</div>
+
+		</article>
+		<footer>
+			<button id="submitCD" name="submit">接入设备</button>
+			<button id="closeCD">取消</button>
+		</footer>
+	</article>
+	<!--script-->
+	<script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
+	<script src="../static/js/createDevice.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

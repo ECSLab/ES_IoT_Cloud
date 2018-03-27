@@ -1,0 +1,74 @@
+.item{
+    width: 88%;
+    margin: 0 0 0 140px;
+}
+.message_top, .deviceTrend, .sparkMsg{
+    background-color: #fff;
+    padding: 13px 13px 13px 27px;
+    color: #999;
+}
+
+.product h3{
+    font-weight: 500;
+    font-size: 18px;
+}
+.message_top h4 {
+    display: inline-block;
+}
+.message_top h4 span{
+    display: inline-block;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    background: #e3eef4;
+    font-size: 14px;
+    padding: 0 5px;
+    border-radius: 8px;
+    color: #7a7e89;
+    margin-right: 10px;
+}
+.message_top h4 label{
+    font-weight: 500;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+.message_top .button {
+    float: right;
+    text-decoration: none;
+    margin-left: 20px;
+    line-height: 28px;
+    font-size: 16px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    height: 28px;
+    padding: 0 15px;
+    display: inline-block;
+    transition: all .2s ease-in;
+    text-align: left;
+   -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border: 1px solid #19bbff;
+    background-color: #fff;
+    color: #19bbff;
+   
+}
+.message_top .button img{
+    width: 20px;
+    height: 20px;
+    vertical-align: sub;
+    margin-right: 3px;
+}
+.pro-describe {
+    color: #888;
+    max-height: 120px;
+    max-width: 800px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    margin-bottom: 10px;
+}
