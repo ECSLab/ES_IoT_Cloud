@@ -63,7 +63,60 @@ function getList() {
         });
       })(j);
     }
+    // 编辑设备
+    for (var k = 0; k < len; k++) {
+      !(function (k) {
+        $(".icon-bianji3")[k].addEventListener("click", function () {
+          var data = {
+            "deviceId": res2.data[len - k - 1].id,
+            "projectId": res2.data[len - k - 1].projectId,
+            "protocolId": res2.data[len - k - 1].protocolId,
+            "dataType": res2.data[len - k - 1].dataType,
+            "name": res2.data[len - k - 1].device01,
+            "number": res2.data[len - k - 1].sfdgfgdfgdg,
+            "privacy": res2.data[len - k - 1].privacy,
+            "apiKey": "68b72e7c9fde449594d7a286b48e8c2e",
+            "userId": 26
+          }
+
+          var url = "http://47.92.48.100:8099/iot/api/device/modify/device";
+          // 弹出框
+          event.stopPropagation();
+          $("#createDevice").fadeIn(500).slideDown(100);
+          $("#createDevice").toggleClass("showStyle");
+          $("#bg").fadeIn(100);
+          editDevice()
+          // $("#zl_delete").fadeIn(500);
+          // $("#bg").fadeIn(100);
+
+          // $("#deleteButton").click(function () {
+          //   $.ajax({
+          //     url: url,
+          //     type: "PUT",
+          //     success: function (result) {
+          //       console.log(result);
+          //       if (result.code == 0) {
+          //         popUp("success", "删除成功！");
+          //         getList();
+          //       } else {
+          //         popUp("error", "删除失败！");
+          //       }
+          //     }
+          //   });
+          // });
+        });
+      })(k);
+    }
   });
+}
+
+function editDevice () {
+  $("#headerMsg").text("编辑设备");
+  $("#submitCD").fadeIn();
+  $("#deviceName").val(data.name);
+  $("#deviceAuth").val(data.number);
+  $("#secrecy").val(data.privacy);
+  $("#dataType").val(data.dataType);
 }
 
 var clipboard = new Clipboard(".DM_copy", {

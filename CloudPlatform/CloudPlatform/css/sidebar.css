@@ -12,7 +12,7 @@ a{
 }
 .header{
     width: 100%;
-    height: 50px;
+    height: 70px;
     background-color: #dbe1e4;
     position: relative;
     top: 0;
@@ -25,16 +25,16 @@ a{
 	top:0;
 	z-index: 100;
 	width:134px;
-	height: 50px;
+	height: 70px;
     box-sizing:border-box;
     border: 2px solid #48c1f3;
 }
 .nav img{
-	display: inline-block;
+    display: inline-block;
     width: 30%;
-    height: 86%;
-    margin-top: 3px;
-    margin-left: 19%;
+    height: 57%;
+    margin-top: 14px;
+    margin-left: 6%;
 }
 .nav span{
     vertical-align: 0.9em;
@@ -46,7 +46,7 @@ a{
 }
 .header .developerHome{
     float: right;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-right: 10px;
     border: 1px solid #19bbff;
     outline: none;

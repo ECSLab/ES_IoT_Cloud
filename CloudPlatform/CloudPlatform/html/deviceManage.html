@@ -112,7 +112,7 @@
 	<!--添加设备-->
 	<article id="createDevice" class="deviceMsg device">
 		<header>
-			<h4>接入设备</h4>
+			<h4 id="headerMsg">添加设备</h4>
 		</header>
 		<article id="cDSection" class="cDSection">
 			<div class="form-group">
@@ -170,6 +170,7 @@
 		</article>
 		<footer>
 			<button id="submitCD" class="submitCD" name="submit">接入设备</button>
+			<button id="editCD" class="submitCD" name="submit">编辑</button>
 			<button id="closeCD" class="closeCD">取消</button>
 		</footer>
 	</article>
@@ -185,70 +186,6 @@
 		<footer>
 			<button id="deleteButton">确定</button>
 			<button id="closeDelete">取消</button>
-		</footer>
-	</article>
-
-	<!-- 编辑设备 -->
-	<article id="editDevice" class="deviceMsg device" style="visibility: hidden">
-		<header>
-			<h4>编辑设备</h5>
-		</header>
-		<article class="cDSection">
-			<div class="form-group">
-				<label for="deviceName">设备名称：</label>
-				<input type="text" id="edit_name" placeholder="设备名称" />
-				<ul class="errorsList">
-					<li>
-						<span id="edit_nameError">
-							必填项
-						</span>
-					</li>
-				</ul>
-			</div>
-			<div class="form-group">
-				<label for="deviceAuth">设备编号：</label>
-				<input type="text" id="edit_deviceAuth" placeholder="请输入厂商编码的设备标识号码" />
-				<ul class="errorsList">
-					<li>
-						<span id="edit_authError">
-							必填项
-						</span>
-					</li>
-				</ul>
-				<span class="zl_tips">设备间不能设置相同的字符串，最多512个字母、数字或字母与数字组合的字符串。</span>
-			</div>
-			<div class="form-group">
-				<label>数据保密性：</label>
-				<div>
-					<label for="secrecy" class="priRadio">
-						<input type="radio" name="edit_devicePri" id="edit_secrecy" value="0" checked/>
-						<span>私有</span>
-					</label>
-
-					<label for="open" class="priRadio">
-						<input type="radio" name="edit_devicePri" id="edit_open" value="1" disabled/>
-						<span id="DM_open">公开</span>
-					</label>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label>设备接入协议：</label>
-				<div>
-					<select id="edit_protocol">
-					</select>
-				</div>
-
-				<label>上传数据类型：</label>
-				<div>
-					<select id="edit_dataType">
-					</select>
-				</div>
-			</div>
-		</article>
-		<footer>
-			<button id="edit_submitCD" class="submitCD">接入设备</button>
-			<button id="edit_closeCD" class="closeCD">取消</button>
 		</footer>
 	</article>
 

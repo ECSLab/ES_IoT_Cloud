@@ -15,6 +15,7 @@
 }
 .message_top h4 {
     display: inline-block;
+    margin: 0;
 }
 .message_top h4 span{
     display: inline-block;
