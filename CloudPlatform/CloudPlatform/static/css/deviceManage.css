@@ -16,12 +16,13 @@ body{
 	
 	color: #333;
 }
-#deviceManage h2{
+#deviceManage h3{
 	padding-left: 20px;
 	line-height: 70px;
 	height: 60px;
 	
-	font-weight: 700;
+	font-weight: 500;
+    font-size: 18px;
 }
 
 #deviceManage article{
@@ -383,6 +384,6 @@ i{
 	z-index: -10000;
 }
 .item{
-	width: 90%;
-    margin: 0px 0 0 144px;
+	width: 88%;
+    margin: 0 auto;
 }

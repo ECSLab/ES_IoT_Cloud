@@ -1,10 +1,11 @@
 .item{
     width: 88%;
-    margin: 0 0 0 140px;
+    margin: 0 auto;
 }
 .message_top, .deviceTrend, .sparkMsg{
     background-color: #fff;
-    padding: 13px 13px 13px 27px;
+    padding: 20px 20px;
+    margin: 20px auto;
     color: #999;
 }
 
