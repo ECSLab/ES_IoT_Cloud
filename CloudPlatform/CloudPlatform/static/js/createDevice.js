@@ -33,7 +33,18 @@ $('#addDevice').click(function(event) {
 	$("#createDevice").fadeIn(500).slideDown(100);
 	$("#createDevice").toggleClass("showStyle");
 	$("#bg").fadeIn(100);
+	addDevice()
 });
+
+function addDevice () {
+	$("#headerMsg").text("添加设备");
+	$("#deviceName").val("");
+	$("#deviceAuth").val("");
+	$("#secrecy").val('0');
+	$("#dataType").val('1');
+	$("#submitCD").fadeIn();
+	$("#editDevice").fadeOut();
+}
 
 //取消添加
 function cancelAdd(){

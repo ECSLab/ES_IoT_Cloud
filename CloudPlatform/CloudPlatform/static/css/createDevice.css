@@ -178,7 +178,7 @@
 }
 
 
-#submitCD{
+.submitCD{
 	background-color: rgb(40, 191, 249);
 	color: white;
 	font-weight: 400;
@@ -188,11 +188,11 @@
 	outline: none;
 }
 
-#submitCD:hover{
+.submitCD:hover{
 	background-color: #40d8ff;
 }
 
-#submitCD:active{
+.submitCD:active{
 	background-color: #0ba2f1;
 }
 

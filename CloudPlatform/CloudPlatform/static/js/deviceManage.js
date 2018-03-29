@@ -72,8 +72,8 @@ function getList() {
             "projectId": res2.data[len - k - 1].projectId,
             "protocolId": res2.data[len - k - 1].protocolId,
             "dataType": res2.data[len - k - 1].dataType,
-            "name": res2.data[len - k - 1].device01,
-            "number": res2.data[len - k - 1].sfdgfgdfgdg,
+            "name": res2.data[len - k - 1].device,
+            "number": res2.data[len - k - 1].number,
             "privacy": res2.data[len - k - 1].privacy,
             "apiKey": "68b72e7c9fde449594d7a286b48e8c2e",
             "userId": 26
@@ -86,24 +86,26 @@ function getList() {
           $("#createDevice").toggleClass("showStyle");
           $("#bg").fadeIn(100);
           editDevice()
-          // $("#zl_delete").fadeIn(500);
-          // $("#bg").fadeIn(100);
 
-          // $("#deleteButton").click(function () {
-          //   $.ajax({
-          //     url: url,
-          //     type: "PUT",
-          //     success: function (result) {
-          //       console.log(result);
-          //       if (result.code == 0) {
-          //         popUp("success", "删除成功！");
-          //         getList();
-          //       } else {
-          //         popUp("error", "删除失败！");
-          //       }
-          //     }
-          //   });
-          // });
+          $("#editDevice").click(function () {
+            $.ajax({
+              url: url,
+              type: 'put',
+              data: data,
+              success: function (result) {
+                console.log(result);
+                if (result.code == 0) {
+                  popUp("success", "编辑成功！");
+                  getList();
+                } else {
+                  popUp("error", "编辑失败！");
+                }
+              }
+            });
+            // popUp("success","添加成功");
+            cancelAdd();
+            getList();
+          });
         });
       })(k);
     }
@@ -112,11 +114,12 @@ function getList() {
 
 function editDevice () {
   $("#headerMsg").text("编辑设备");
-  $("#submitCD").fadeIn();
   $("#deviceName").val(data.name);
   $("#deviceAuth").val(data.number);
   $("#secrecy").val(data.privacy);
   $("#dataType").val(data.dataType);
+  $("#editDevice").fadeIn()
+  $("#submitCD").fadeOut()
 }
 
 var clipboard = new Clipboard(".DM_copy", {
