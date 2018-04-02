@@ -53,6 +53,8 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
+
+
   <!--配置DispatcherServlet-->
   <servlet>
     <servlet-name>iot-dispatcher</servlet-name>

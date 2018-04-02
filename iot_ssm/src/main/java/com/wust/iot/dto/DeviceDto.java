@@ -19,7 +19,7 @@ public class DeviceDto {
     @ApiModelProperty(value = "设备编号",notes = "仅允许数字及字母")
     private String number;
 
-    @ApiModelProperty(value = "设备保密性",notes = "0公开 1私有")
+    @ApiModelProperty(value = "设备保密性",notes = "0公开 1私有",hidden = true)
     private Integer privacy;
 
     public DeviceDto() {

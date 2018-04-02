@@ -1,0 +1,35 @@
+iot_ssm/*.class
+
+#package file
+iot_ssm/*.war
+iot_ssm/*.ear
+
+#kdiff3 ignore
+iot_ssm/*.orig
+
+#maven ignore
+iot_ssm/target/
+
+#eclipse ignore
+iot_ssm/.settings/
+iot_ssm/.project/
+iot_ssm/.classpath
+
+#idea igonre
+iot_ssm/.idea/
+iot_ssm/idea/
+iot_ssm/*.ipr
+iot_ssm/*.iml
+iot_ssm/*.iws
+
+#temp file
+iot_ssm/*.log
+iot_ssm/*.cache
+iot_ssm/*.diff
+iot_ssm/*.patch
+iot_ssm/*.tmp
+
+
+#jdbc
+iot_ssm/src/main/resources.jdbc.propertites
+

@@ -3,10 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <link type="favicon" rel="shortcut icon" th:href="@{/static/img/favicon.ico}" />
+    <link type="favicon" rel="shortcut icon" th:href="@{/static/img/favicon2.ico}" />
+    <link rel="stylesheet" th:href="@{/static/css/home.css}" />
 </head>
 <body>
-ES IoT首页<br>
-<a th:href="@{/login}">登录页面</a>
+<div class="header">
+    <div class="header_img">
+        <img th:src="@{/static/img/logo0.jpg}" />
+    </div>
+    <div class="menuList">
+        <a href="#" class="logo"></a>
+        <span class="apart"></span>
+        <a href="#" class="menu" title="首页">首页</a>
+        <div class="menu multi">
+            <span>案例与伙伴</span>
+        </div>
+        <a href="#" class="menu" title="开发文档">开发文档</a>
+        <a href="#" class="menu" title="发现">发现</a>
+        <a href="#" class="menu" title="社区">社区</a>
+        <div class="menu multi">
+            <span>动态</span>
+        </div>
+        <a th:href="@{/login}" class="menu" title="登录">登录</a>
+    </div>
+</div>
+<div class="video">
+    <video th:src="@{/static/img/IoT.mp4}" loop="loop" width="100%" preload="preload" autoplay="autoplay"></video>
+</div>
+<div class="content">
+    <div class="content_head">
+        <p class="service">全方位的服务平台</p>
+        <p class="small_word">高扩展的数据库、实时数据处理、智能预测离线数据分析、数据可视化展示等</p>
+        <p class="small_word">为您提供多维度的业务运营服务</p>
+    </div>
+    <div class="five">
+        <div class="circle">
+            <div class="centerImg">
+                <img th:src="@{/static/img/analyze.jpg}">
+            </div>
+            <p class="circle_head">流分析</p>
+            <p class="circle_p">开发者自定义设备数据流类型和数据模板，让上传数据可视化展示</p>
+        </div>
+        <div class="circle">
+            <div class="centerImg">
+                <img th:src="@{/static/img/cloudManage.jpg}" class="cloud_img">
+            </div>
+            <p class="circle_head">设备云端管理</p>
+            <p class="circle_p">开发者自定义设备数据流类型和数据模板，让上传数据可视化展示</p>
+        </div>
+        <div class="circle">
+            <div class="centerImg">
+                <img th:src="@{/static/img/adapt.jpg}">
+            </div>
+            <p class="circle_head">多协议适配</p>
+            <p class="circle_p">开发者自定义设备数据流类型和数据模板，让上传数据可视化展示</p>
+        </div>
+        <div class="circle">
+            <div class="centerImg">
+                <img th:src="@{/static/img/API.jpg}" class="API">
+            </div>
+            <p class="circle_head">API</p>
+            <p class="circle_p">开发者自定义设备数据流类型和数据模板，让上传数据可视化展示</p>
+        </div>
+        <div class="circle">
+            <div class="centerImg">
+                <img th:src="@{/static/img/onlineHelp.jpg}">
+            </div>
+            <p class="circle_head">在线帮助文档</p>
+            <p class="circle_p">开发者自定义设备数据流类型和数据模板，让上传数据可视化展示</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_left">
+        <p class="itemName">ES IoT Cloud</p>
+        <p class="linux">嵌入式实验室</p>
+        <p class="foot_small one">湖北省武汉市洪山区黄家湖校区武汉科技大学教三楼508</p>
+        <p class="foot_small">&copy; 2018 Megvii Technology Limited.|鄂ICP备12036813号-4</p>
+    </div>
+    <div class="footer_right">
+        <p>联系我们</p>
+        <p class="phone"><img th:src="@{/static/img/mobilePhone.png}">12345678934</p>
+        <p><img th:src="@{/static/img/wechat.png}">ES_IoTCloud</p>
+        <p><img th:src="@{/static/img/weibo.png}">ESIoT</p>
+        <p><img th:src="@{/static/img/message.png}">ESIoT@163.com</p>
+    </div>
+</div>
 </body>
 </html>

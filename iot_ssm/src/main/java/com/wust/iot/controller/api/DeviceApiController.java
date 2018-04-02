@@ -61,7 +61,7 @@ public class DeviceApiController {
 
     @ApiOperation(value = "新建设备")
     @PostMapping(value = "/create/device")
-    public Result<DeviceDto> createDevice(@RequestParam(value = "userId") int userId,
+    public Result<Device> createDevice(@RequestParam(value = "userId") int userId,
                                           @ModelAttribute(value = "device") DeviceDto deviceDto) {
         Project project = projectService.findOneProject(deviceDto.getProjectId());
 
@@ -79,6 +79,10 @@ public class DeviceApiController {
         if (dataType == null)
             return new Result(ResultEnums.DATATYPE_NOT_EXIST);
 
+        //TODO
+        //暂时不允许设备为公开，默认私有
+        deviceDto.setPrivacy(0);
+
 
         Device device = new Device();
         device.setProjectId(deviceDto.getProjectId());
@@ -94,7 +98,7 @@ public class DeviceApiController {
         else{
             //记录用户行为
             userRecordService.insertOneUserRecord(UserRecordUtil.createUserRecord(userId,RecordEnums.CREATE_DEVICE.id,String.valueOf(device.getId())));
-            return new Result<DeviceDto>(ResultEnums.SUCCESS, deviceDto);
+            return new Result<Device>(ResultEnums.SUCCESS, device);
         }
     }
 
@@ -192,7 +196,7 @@ public class DeviceApiController {
         if (device == null)
             return new Result(ResultEnums.DEVICE_NOT_EXIST);
 
-        Project project = projectService.findOneProjectByIdAndApiKey(deviceId,apiKey);
+        Project project = projectService.findOneProjectByIdAndApiKey(device.getProjectId(),apiKey);
         if (project == null)
             return new Result(ResultEnums.PROJECT_NOT_EXIST);
 

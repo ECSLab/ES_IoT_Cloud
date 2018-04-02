@@ -20,6 +20,8 @@
     id, username, password, bind_phone, bind_email, real_name, birthday, location, work_place, 
     personal_profile, head_image, phone, qq
   </sql>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

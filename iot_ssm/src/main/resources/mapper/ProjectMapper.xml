@@ -136,9 +136,13 @@
   </select>
 
   <select id="selectProjectListByUserId" resultType="Project">
-    SELECT p.*,COUNT(*) AS device_count,i.name as industry_name
-    FROM IoT_platform.t_project_info p, IoT_platform.t_device_info d,IoT_platform.t_project_industry i
-    WHERE p.id = d.project_id and p.user_id = #{userId} and p.industry_id = i.id
+    SELECT p.*,COUNT(d.id) AS device_count,i.name as industry_name
+    FROM IoT_platform.t_project_info p
+    LEFT JOIN IoT_platform.t_device_info d
+    ON d.project_id = p.id
+    JOIN IoT_platform.t_project_industry i
+    ON p.industry_id = i.id
+    WHERE  p.user_id = #{userId}
     group by p.id;
   </select>
 

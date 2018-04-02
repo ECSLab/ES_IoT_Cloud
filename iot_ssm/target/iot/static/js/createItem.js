@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$.ajax({
 		type:"get",
-		url:"../../api/projectIndustry/list",
+		url:"../api/projectIndustry/list",
 		dataType:"json",
 		data:"",
 		async:false,
@@ -61,7 +61,7 @@ $(document).ready(function(){
 			$.ajax({
 				type:"post",
 				async:false,
-				url: "../../api/project/create",
+				url: "../api/project/create",
 		        dataType:"json",
 		        data:{"userId":parseInt(userId),"name":name,"industryId":parseInt(industryId),"profile":profile},
 		        success: function (res) {
