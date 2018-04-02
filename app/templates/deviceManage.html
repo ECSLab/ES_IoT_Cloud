@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/deviceManage.css" />
 	<link rel="stylesheet" type="text/css" href="../static/css/createDevice.css" />
 	<!-- <link rel="stylesheet" type="text/css" href="../static/css/editDevice.css"> -->
-	<link rel="stylesheet" type="text/css" href="../static/css/delete.css"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/delete.css" />
 </head>
 
 <body>
@@ -105,16 +105,16 @@
 		</div>
 
 	</section>
-	
+
 	<!-- 遮罩层 -->
 	<div id="bg"></div>
-	
+
 	<!--添加设备-->
-	<article id="createDevice" class="deviceMsg">
+	<article id="createDevice" class="deviceMsg device">
 		<header>
-			<h4>接入设备</h5>
+			<h4>接入设备</h4>
 		</header>
-		<article id="cDSection">
+		<article id="cDSection" class="cDSection">
 			<div class="form-group">
 				<label for="deviceName">设备名称：</label>
 				<input type="text" name="deviceName" id="deviceName" placeholder="设备名称" />
@@ -143,7 +143,7 @@
 				<label>数据保密性：</label>
 				<div>
 					<label for="secrecy" class="priRadio">
-						<input type="radio" name="devicePri" id="secrecy" value="0"  checked/>
+						<input type="radio" name="devicePri" id="secrecy" value="0" checked/>
 						<span>私有</span>
 					</label>
 
@@ -169,8 +169,8 @@
 			</div>
 		</article>
 		<footer>
-			<button id="submitCD" name="submit">接入设备</button>
-			<button id="closeCD">取消</button>
+			<button id="submitCD" class="submitCD" name="submit">接入设备</button>
+			<button id="closeCD" class="closeCD">取消</button>
 		</footer>
 	</article>
 
@@ -189,17 +189,17 @@
 	</article>
 
 	<!-- 编辑设备 -->
-	<article id="editDevice">
+	<article id="editDevice" class="deviceMsg device" style="visibility: hidden">
 		<header>
 			<h4>编辑设备</h5>
 		</header>
-		<article class="eDSection">
+		<article class="cDSection">
 			<div class="form-group">
 				<label for="deviceName">设备名称：</label>
-				<input type="text" id="deviceName" placeholder="设备名称" />
+				<input type="text" id="edit_name" placeholder="设备名称" />
 				<ul class="errorsList">
 					<li>
-						<span id="nameError">
+						<span id="edit_nameError">
 							必填项
 						</span>
 					</li>
@@ -207,53 +207,68 @@
 			</div>
 			<div class="form-group">
 				<label for="deviceAuth">设备编号：</label>
-				<input type="text" name="deviceAuth" id="deviceAuth" placeholder="请输入厂商编码的设备标识号码" />
+				<input type="text" id="edit_deviceAuth" placeholder="请输入厂商编码的设备标识号码" />
 				<ul class="errorsList">
 					<li>
-						<span id="authError">
+						<span id="edit_authError">
 							必填项
 						</span>
 					</li>
 				</ul>
+				<span class="zl_tips">设备间不能设置相同的字符串，最多512个字母、数字或字母与数字组合的字符串。</span>
+			</div>
+			<div class="form-group">
+				<label>数据保密性：</label>
+				<div>
+					<label for="secrecy" class="priRadio">
+						<input type="radio" name="edit_devicePri" id="edit_secrecy" value="0" checked/>
+						<span>私有</span>
+					</label>
+
+					<label for="open" class="priRadio">
+						<input type="radio" name="edit_devicePri" id="edit_open" value="1" disabled/>
+						<span id="DM_open">公开</span>
+					</label>
+				</div>
 			</div>
 
 			<div class="form-group">
 				<label>设备接入协议：</label>
 				<div>
-					<select name="protocol" id="protocol">
+					<select id="edit_protocol">
 					</select>
 				</div>
 
 				<label>上传数据类型：</label>
 				<div>
-					<select name="datatype" id="dataType">
+					<select id="edit_dataType">
 					</select>
 				</div>
 			</div>
 		</article>
 		<footer>
-			<button class="editCD">确定</button>
-			<button id="closeCD">取消</button>
+			<button id="edit_submitCD" class="submitCD">接入设备</button>
+			<button id="edit_closeCD" class="closeCD">取消</button>
 		</footer>
 	</article>
 
 	<!-- 导出设备时增加的列表 -->
 	<table id="exportTable">
-			<thead>
-				<tr>
-					<th>name</th>
-					<th>id</th>
-					<th>createTime</th>
-					<th>dataType</th>
-					<th>dataType</th>
-					<th>number</th>
-					<th>privacy</th>
-					<th>projectId</th>
-					<th>protocolId</th>
-				</tr>
-			</thead>
-			<tbody id="table"></tbody>
-		</table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>id</th>
+				<th>createTime</th>
+				<th>dataType</th>
+				<th>dataType</th>
+				<th>number</th>
+				<th>privacy</th>
+				<th>projectId</th>
+				<th>protocolId</th>
+			</tr>
+		</thead>
+		<tbody id="table"></tbody>
+	</table>
 
 	<script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
 	<!--剪切板-->
@@ -262,6 +277,7 @@
 	<!-- <script src="../static/js/editDevice" type="text/javascript"></script>	 -->
 	<script src="../static/js/createDevice.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="../static/js/FileSaver.min.js"></script>
-    <script type="text/javascript" src="../static/js/tableExport.js"></script>
+	<script type="text/javascript" src="../static/js/tableExport.js"></script>
 </body>
+
 </html>

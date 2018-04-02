@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sidebar</title>
+	<link rel="stylesheet" type="text/css" href="../css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="../static/fonticon/iconfont.css">
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/sidebar.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="nav" id="main-header">
+			<img src="../img/导航.png">
+			<span>菜单</span>
+		</div>
+		<div>
+			<a class="developerHome" id="developerHome" href="./developerHome.html">
+				<i class="iconfont icon-center_gold"></i>
+				开发者中心
+			</a>
+		</div>
+	</div>
+	<aside class="main-sidebar" >
+		<section class="sidebar" style="display: block;">
+			<ul class="sidebar-menu">
+				
+				<li class="active">
+					<a href="product.html" target="mainWindow">
+						<!-- <i class="iconfont icon-equipment-info"></i> -->
+						<span>产品概况</span>
+					</a>
+				</li>
+				<li>
+					<a href="deviceManage.html" target="mainWindow">
+						<!-- <i class="iconfont icon-equipment-info"></i> -->
+						<span>设备管理</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</aside>
+	<section class="item">
+		<iframe 
+			src="product.html" 
+			name="mainWindow"
+			width="100%"
+			height="1200px"
+			frameborder=0
+			scrolling="no">
+		</iframe>		
+	</section>
+</body>
+</html>

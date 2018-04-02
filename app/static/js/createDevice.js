@@ -1,4 +1,4 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 	$.ajax({
 		type:"get",
 		url:"http://47.92.48.100:8099/iot/api/protocolInfo/list",
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		}
 	})
 	
-})
+// })
 
 //添加设备
 $('#addDevice').click(function(event) {
@@ -132,8 +132,6 @@ $("#deviceAuth").bind("input",function(){
 	return true;
 });
 
-
-// 提交
 $("#submitCD").click(function(){
 	var devicename = $("#deviceName").val();
 	var deviceAuth = $("#deviceAuth").val();
@@ -149,8 +147,8 @@ $("#submitCD").click(function(){
 		dataType: "json",
 		url: "http://47.92.48.100:8099/iot/api/device/create/device",
 		data: {
-			"userId": 7,		
-			"projectId": 4,		//项目ID
+			"userId": 26,		
+			"projectId": 38,		//项目ID
 			"protocolId": protocol,	//协议ID
 			"dataType": dataType,		//数据类型ID
 			"name": devicename,
