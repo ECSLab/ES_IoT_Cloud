@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FF5365B207F8D6D00D4E189 /* libEsLabSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF5365A207F8D6D00D4E189 /* libEsLabSDK.a */; };
+		0FF5365C207F8EE700D4E189 /* DrawerDemo.app in Resources */ = {isa = PBXBuildFile; fileRef = 4A29CC2F1CA042A900014E54 /* DrawerDemo.app */; };
+		284C8129B55F38256FF93E5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F786D48600F976CFAA03F73A /* libPods.a */; };
+		4A29CC341CA042A900014E54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A29CC331CA042A900014E54 /* main.m */; };
+		4A29CC371CA042A900014E54 /* LitterLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A29CC361CA042A900014E54 /* LitterLAppDelegate.m */; };
+		4A29CC3F1CA042A900014E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A29CC3E1CA042A900014E54 /* Assets.xcassets */; };
+		4A29CC421CA042A900014E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A29CC401CA042A900014E54 /* LaunchScreen.storyboard */; };
+		4AED101C1CA10B3200E7F2DA /* LitterLCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AED10131CA10B3200E7F2DA /* LitterLCenterViewController.m */; };
+		4AED101D1CA10B3200E7F2DA /* LitterLLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AED10151CA10B3200E7F2DA /* LitterLLeftViewController.m */; };
+		4AED101F1CA10B3200E7F2DA /* LitterLShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AED10191CA10B3200E7F2DA /* LitterLShowViewController.m */; };
+		A24E6721201195F400CA3771 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E6712201195F400CA3771 /* AFHTTPSessionManager.m */; };
+		A24E6722201195F400CA3771 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E6715201195F400CA3771 /* AFNetworkReachabilityManager.m */; };
+		A24E6723201195F400CA3771 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E6717201195F400CA3771 /* AFSecurityPolicy.m */; };
+		A24E6724201195F400CA3771 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E6719201195F400CA3771 /* AFURLRequestSerialization.m */; };
+		A24E6725201195F400CA3771 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E671B201195F400CA3771 /* AFURLResponseSerialization.m */; };
+		A24E6726201195F400CA3771 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A24E671D201195F400CA3771 /* AFURLSessionManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FF5365A207F8D6D00D4E189 /* libEsLabSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEsLabSDK.a; sourceTree = "<group>"; };
+		12C2EAE41564D776DD7AF55C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4A29CC2F1CA042A900014E54 /* DrawerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A29CC331CA042A900014E54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4A29CC351CA042A900014E54 /* LitterLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitterLAppDelegate.h; sourceTree = "<group>"; };
+		4A29CC361CA042A900014E54 /* LitterLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitterLAppDelegate.m; sourceTree = "<group>"; };
+		4A29CC3E1CA042A900014E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A29CC411CA042A900014E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A29CC431CA042A900014E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AED10121CA10B3200E7F2DA /* LitterLCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LitterLCenterViewController.h; sourceTree = "<group>"; };
+		4AED10131CA10B3200E7F2DA /* LitterLCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LitterLCenterViewController.m; sourceTree = "<group>"; };
+		4AED10141CA10B3200E7F2DA /* LitterLLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LitterLLeftViewController.h; sourceTree = "<group>"; };
+		4AED10151CA10B3200E7F2DA /* LitterLLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LitterLLeftViewController.m; sourceTree = "<group>"; };
+		4AED10181CA10B3200E7F2DA /* LitterLShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LitterLShowViewController.h; sourceTree = "<group>"; };
+		4AED10191CA10B3200E7F2DA /* LitterLShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LitterLShowViewController.m; sourceTree = "<group>"; };
+		7058255082A5A2619240240B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A24E6711201195F400CA3771 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		A24E6712201195F400CA3771 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		A24E6713201195F400CA3771 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		A24E6714201195F400CA3771 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		A24E6715201195F400CA3771 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		A24E6716201195F400CA3771 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		A24E6717201195F400CA3771 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		A24E6718201195F400CA3771 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		A24E6719201195F400CA3771 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		A24E671A201195F400CA3771 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		A24E671B201195F400CA3771 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		A24E671C201195F400CA3771 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		A24E671D201195F400CA3771 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		A24E671E201195F400CA3771 /* iotOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iotOperation.h; sourceTree = "<group>"; };
+		A24E671F201195F400CA3771 /* iotPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iotPost.h; sourceTree = "<group>"; };
+		F786D48600F976CFAA03F73A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A29CC2C1CA042A900014E54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FF5365B207F8D6D00D4E189 /* libEsLabSDK.a in Frameworks */,
+				284C8129B55F38256FF93E5A /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A29CC261CA042A900014E54 = {
+			isa = PBXGroup;
+			children = (
+				A24E670F201195F400CA3771 /* SDK */,
+				4A29CC311CA042A900014E54 /* DrawerDemo */,
+				4A29CC301CA042A900014E54 /* Products */,
+				B5A3D12D8E6119E7BC15A28A /* Pods */,
+				D72C320E8F01A02A0ED41A76 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A29CC301CA042A900014E54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A29CC2F1CA042A900014E54 /* DrawerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A29CC311CA042A900014E54 /* DrawerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4AED10111CA10B3200E7F2DA /* Class */,
+				4A29CC351CA042A900014E54 /* LitterLAppDelegate.h */,
+				4A29CC361CA042A900014E54 /* LitterLAppDelegate.m */,
+				4A29CC3E1CA042A900014E54 /* Assets.xcassets */,
+				4A29CC401CA042A900014E54 /* LaunchScreen.storyboard */,
+				4A29CC431CA042A900014E54 /* Info.plist */,
+				4A29CC321CA042A900014E54 /* Supporting Files */,
+			);
+			path = DrawerDemo;
+			sourceTree = "<group>";
+		};
+		4A29CC321CA042A900014E54 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A29CC331CA042A900014E54 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AED10111CA10B3200E7F2DA /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				4AED10121CA10B3200E7F2DA /* LitterLCenterViewController.h */,
+				4AED10131CA10B3200E7F2DA /* LitterLCenterViewController.m */,
+				4AED10141CA10B3200E7F2DA /* LitterLLeftViewController.h */,
+				4AED10151CA10B3200E7F2DA /* LitterLLeftViewController.m */,
+				4AED10181CA10B3200E7F2DA /* LitterLShowViewController.h */,
+				4AED10191CA10B3200E7F2DA /* LitterLShowViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		A24E670F201195F400CA3771 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				A24E6710201195F400CA3771 /* AFNetworking */,
+				A24E671E201195F400CA3771 /* iotOperation.h */,
+				A24E671F201195F400CA3771 /* iotPost.h */,
+				0FF5365A207F8D6D00D4E189 /* libEsLabSDK.a */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		A24E6710201195F400CA3771 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				A24E6711201195F400CA3771 /* AFHTTPSessionManager.h */,
+				A24E6712201195F400CA3771 /* AFHTTPSessionManager.m */,
+				A24E6713201195F400CA3771 /* AFNetworking.h */,
+				A24E6714201195F400CA3771 /* AFNetworkReachabilityManager.h */,
+				A24E6715201195F400CA3771 /* AFNetworkReachabilityManager.m */,
+				A24E6716201195F400CA3771 /* AFSecurityPolicy.h */,
+				A24E6717201195F400CA3771 /* AFSecurityPolicy.m */,
+				A24E6718201195F400CA3771 /* AFURLRequestSerialization.h */,
+				A24E6719201195F400CA3771 /* AFURLRequestSerialization.m */,
+				A24E671A201195F400CA3771 /* AFURLResponseSerialization.h */,
+				A24E671B201195F400CA3771 /* AFURLResponseSerialization.m */,
+				A24E671C201195F400CA3771 /* AFURLSessionManager.h */,
+				A24E671D201195F400CA3771 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		B5A3D12D8E6119E7BC15A28A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7058255082A5A2619240240B /* Pods.debug.xcconfig */,
+				12C2EAE41564D776DD7AF55C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D72C320E8F01A02A0ED41A76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F786D48600F976CFAA03F73A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A29CC2E1CA042A900014E54 /* DrawerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A29CC461CA042A900014E54 /* Build configuration list for PBXNativeTarget "DrawerDemo" */;
+			buildPhases = (
+				2A308E74EAA9BB67D413A677 /* Check Pods Manifest.lock */,
+				4A29CC2B1CA042A900014E54 /* Sources */,
+				4A29CC2C1CA042A900014E54 /* Frameworks */,
+				4A29CC2D1CA042A900014E54 /* Resources */,
+				06159A292E1BDDFF8553B12F /* Embed Pods Frameworks */,
+				C94EA5D3948CC7FC0313F66F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrawerDemo;
+			productName = DrawerDemo;
+			productReference = 4A29CC2F1CA042A900014E54 /* DrawerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A29CC271CA042A900014E54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = LJY;
+				TargetAttributes = {
+					4A29CC2E1CA042A900014E54 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 3M8S96B2L9;
+					};
+				};
+			};
+			buildConfigurationList = 4A29CC2A1CA042A900014E54 /* Build configuration list for PBXProject "DrawerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A29CC261CA042A900014E54;
+			productRefGroup = 4A29CC301CA042A900014E54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A29CC2E1CA042A900014E54 /* DrawerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A29CC2D1CA042A900014E54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A29CC421CA042A900014E54 /* LaunchScreen.storyboard in Resources */,
+				4A29CC3F1CA042A900014E54 /* Assets.xcassets in Resources */,
+				0FF5365C207F8EE700D4E189 /* DrawerDemo.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06159A292E1BDDFF8553B12F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A308E74EAA9BB67D413A677 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C94EA5D3948CC7FC0313F66F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A29CC2B1CA042A900014E54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A24E6724201195F400CA3771 /* AFURLRequestSerialization.m in Sources */,
+				4AED101F1CA10B3200E7F2DA /* LitterLShowViewController.m in Sources */,
+				4AED101D1CA10B3200E7F2DA /* LitterLLeftViewController.m in Sources */,
+				4A29CC371CA042A900014E54 /* LitterLAppDelegate.m in Sources */,
+				A24E6726201195F400CA3771 /* AFURLSessionManager.m in Sources */,
+				A24E6725201195F400CA3771 /* AFURLResponseSerialization.m in Sources */,
+				A24E6722201195F400CA3771 /* AFNetworkReachabilityManager.m in Sources */,
+				A24E6723201195F400CA3771 /* AFSecurityPolicy.m in Sources */,
+				A24E6721201195F400CA3771 /* AFHTTPSessionManager.m in Sources */,
+				4A29CC341CA042A900014E54 /* main.m in Sources */,
+				4AED101C1CA10B3200E7F2DA /* LitterLCenterViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A29CC401CA042A900014E54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A29CC411CA042A900014E54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A29CC441CA042A900014E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4A29CC451CA042A900014E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A29CC471CA042A900014E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7058255082A5A2619240240B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3M8S96B2L9;
+				INFOPLIST_FILE = DrawerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Demo.bundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4A29CC481CA042A900014E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12C2EAE41564D776DD7AF55C /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3M8S96B2L9;
+				INFOPLIST_FILE = DrawerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Demo.bundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A29CC2A1CA042A900014E54 /* Build configuration list for PBXProject "DrawerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A29CC441CA042A900014E54 /* Debug */,
+				4A29CC451CA042A900014E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A29CC461CA042A900014E54 /* Build configuration list for PBXNativeTarget "DrawerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A29CC471CA042A900014E54 /* Debug */,
+				4A29CC481CA042A900014E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A29CC271CA042A900014E54 /* Project object */;
+}
